@@ -16,37 +16,38 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.Objects;
+import java.util.Properties;
 import java.util.ResourceBundle;
 
-public class loginPage implements Initializable {
+public class loginPage  {
     @FXML private Label comment;
-    @FXML private TextField username;
+    @FXML private TextField Email;
     @FXML private PasswordField password;
-    @FXML private ChoiceBox <String> choice;
-    private Button exit;
 
 
-
-
+    @FXML protected void onExitButtonClick(){
+        javafx.application.Platform.exit();
+    }
 
 
     @FXML protected void onLoginButtonClick(ActionEvent event){
-        if((!username.getText().isBlank()) && (!password.getText().isBlank())){
-//            if(username.getText().length()<=9 && username.getText().length()>=8){
-//                validLogin(username.getText(),password.getText(),event);
+        comment.setText("");
+        if((!Email.getText().isBlank()) && (!password.getText().isBlank())){
+//            if(Email.getText().length()<=9 && username.getText().length()>=8){
+//                validLogin(Email.getText(),password.getText(),event);
 //            }
 //            else {
 //                comment.setText("* User name must be your varsity ID. ");
 //
 //            }
-            validLogin(username.getText(),password.getText(),event);
+            validLogin(Email.getText(),password.getText(),event);
 
         }
         else {
             comment.setText("You must fill all the filled");
 
         }
-        username.setText("");
+        Email.setText("");
         password.setText("");
     }
     @FXML protected void onRegisterButtonClick(ActionEvent event){
@@ -65,11 +66,11 @@ public class loginPage implements Initializable {
 
     }
 
-    public void validLogin(String user,String pass,ActionEvent event){
+    public void validLogin(String email,String pass,ActionEvent event){
       //  comment.setText(user + pass);
         DatabaseConnection connectNow = new DatabaseConnection();
         Connection connectDB = connectNow.getConnection();
-        String verifyLogin = "SELECT count(1) FROM logindata WHERE username ='" + user +"' AND password = '" + pass +"'";
+        String verifyLogin = "SELECT count(1) FROM logindata WHERE email ='" + email +"' AND password = '" + pass +"'";
         try {
             Statement statement = connectDB.createStatement();
             ResultSet queryResult = statement.executeQuery(verifyLogin);
@@ -81,7 +82,10 @@ public class loginPage implements Initializable {
 
                 }
                 else {
-                    comment.setText("login failed");
+                   // comment.setText("login failed");
+                    Alert alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setContentText("Email or password is not correct.\nPlease try again.");
+                    alert.show();
                 }
             }
         }catch (Exception e){
@@ -90,30 +94,11 @@ public class loginPage implements Initializable {
 
         }
 
+
     }
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        choice.getItems().add("AuthorizeLogin");
-        choice.getItems().add("Exit");
-        choice.setOnAction(event -> {
-            try {
-                onChoiceBoxClick(event);
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-        });
-    }
 
-    public void onChoiceBoxClick(ActionEvent event) throws IOException {
-        String c = choice.getValue();
-        if(c.equals("Exit")){
-            javafx.application.Platform.exit();
-        } else if (c.equals("AuthorizeLogin")) {
-            onAuthorizeLoginButtonClick(event);
-            
-        }
-    }
+
     public void onAuthorizeLoginButtonClick(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("authorizerLogin.fxml")));
         Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="600.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.q_studentcommunity.otpVerification">
+   <children>
+      <HBox prefHeight="600.0" prefWidth="700.0">
+         <children>
+            <Pane prefHeight="600.0" prefWidth="246.0">
+               <children>
+                  <ImageView fitHeight="600.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../file/Screenshot%202023-11-29%20031145.png" />
+                     </image>
+                  </ImageView>
+                  <HBox alignment="CENTER" layoutX="47.0" layoutY="520.0" prefHeight="35.0" prefWidth="153.0">
+                     <children>
+                        <Hyperlink onAction="#onRegisterButtonClick" text="Back" textFill="#8c2156" />
+                        <Label text="or" />
+                        <Hyperlink onAction="#onExitButtonClick" text="Exit" textFill="#8c2156" />
+                     </children>
+                  </HBox>
+               </children>
+            </Pane>
+            <Pane prefHeight="600.0" prefWidth="450.0">
+               <children>
+                  <ImageView fitHeight="267.0" fitWidth="264.0" layoutX="186.0" opacity="0.3" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../file/Pink%20and%20Purple%20Minimal%20Q%20Letter%20Logo%20(2).png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="377.0" fitWidth="311.0" layoutY="289.0" opacity="0.3" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../file/Pink%20and%20Purple%20Minimal%20Q%20Letter%20Logo%20(2).png" />
+                     </image>
+                  </ImageView>
+                  <Pane layoutX="83.0" layoutY="174.0" prefHeight="252.0" prefWidth="285.0" style="-fx-background-color: f4f4f4; -fx-background-radius: 10;">
+                     <children>
+                        <VBox alignment="CENTER" layoutX="3.0" layoutY="20.0" prefHeight="213.0" prefWidth="280.0" spacing="15.0" style="-fx-background-radius: 10;">
+                           <children>
+                              <TextField fx:id="otpTF" prefHeight="33.0" prefWidth="270.0" promptText="Enter OTP" style="-fx-background-radius: 20;">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <effect>
+                                    <DropShadow height="5.0" radius="2.0" width="5.0" />
+                                 </effect>
+                              </TextField>
+                              <Button alignment="CENTER" mnemonicParsing="false" onAction="#onOtpCheckButtonClick" prefHeight="25.0" prefWidth="300.0" style="-fx-background-radius: 20; -fx-background-color: #9270a7;" text="SUBMIT" textFill="#e8e8e8">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                                 <effect>
+                                    <DropShadow height="25.0" radius="12.0" width="25.0">
+                                       <color>
+                                          <Color red="0.5789473652839661" green="0.30823585391044617" blue="0.5563880801200867" />
+                                       </color>
+                                    </DropShadow>
+                                 </effect>
+                              </Button>
+                              <Label fx:id="error" alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="269.0" textFill="RED">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </VBox>
+                     </children>
+                     <effect>
+                        <DropShadow blurType="TWO_PASS_BOX" height="50.0" radius="24.5" width="50.0">
+                           <color>
+                              <Color red="0.5600000023841858" green="0.40880000591278076" blue="0.5549600124359131" opacity="0.8454961776733398" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </Pane>
+               </children>
+            </Pane>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
