@@ -26,10 +26,6 @@ public class loginPage implements Initializable {
     private Button exit;
 
 
-
-
-
-
     @FXML protected void onLoginButtonClick(ActionEvent event){
         if((!username.getText().isBlank()) && (!password.getText().isBlank())){
 //            if(username.getText().length()<=9 && username.getText().length()>=8){
