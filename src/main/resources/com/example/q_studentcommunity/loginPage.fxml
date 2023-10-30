@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.q_studentcommunity.loginPage">
+   <children>
+      <Pane prefHeight="600.0" prefWidth="250.0" style="-fx-background-color: #999966;" />
+      <Pane layoutX="250.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="450.0">
+         <children>
+            <HBox layoutX="93.0" layoutY="206.0" prefHeight="87.0" prefWidth="257.0">
+               <children>
+                  <VBox prefHeight="278.0" prefWidth="78.0" spacing="20.0">
+                     <children>
+                        <Label text="Username" />
+                        <Label text="Password" />
+                     </children>
+                     <padding>
+                        <Insets top="10.0" />
+                     </padding>
+                  </VBox>
+                  <VBox prefHeight="278.0" prefWidth="187.0" spacing="10.0">
+                     <children>
+                        <TextField fx:id="username" alignment="TOP_LEFT" promptText="Username" />
+                        <PasswordField fx:id="password" promptText="Password" />
+                     </children>
+                     <padding>
+                        <Insets top="10.0" />
+                     </padding>
+                  </VBox>
+               </children>
+            </HBox>
+            <Button layoutX="202.0" layoutY="293.0" mnemonicParsing="false" onAction="#onLoginButtonClick" text="Login" />
+            <Label layoutX="132.0" layoutY="328.0" text="Not have account?" />
+            <Hyperlink layoutX="231.0" layoutY="325.0" onAction="#onRegisterButtonClick" text="Register." />
+            <Label fx:id="comment" alignment="CENTER" layoutX="117.0" layoutY="368.0" prefHeight="17.0" prefWidth="210.0" textFill="RED" />
+            <ChoiceBox fx:id="choice" layoutX="133.0" layoutY="479.0" prefHeight="25.0" prefWidth="183.0" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

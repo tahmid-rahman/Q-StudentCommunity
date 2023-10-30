@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.q_studentcommunity.homePage">
+   <children>
+      <Pane prefHeight="65.0" prefWidth="700.0" style="-fx-background-color: #5c8a8a;" />
+      <Pane layoutY="65.0" prefHeight="535.0" prefWidth="250.0" style="-fx-background-color: #669999;">
+         <children>
+            <VBox prefHeight="455.0" prefWidth="250.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#onOpinionPageButtonClick" prefHeight="65.0" prefWidth="250.0" style="-fx-background-color: #527a7a; -fx-border-color: #527a7a;" text="Opinion" textFill="#eeeaea">
+                     <font>
+                        <Font name="Sitka Small Bold Italic" size="20.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#onHelpPageButtonClick" prefHeight="65.0" prefWidth="250.0" style="-fx-background-color: #5c8a8a; -fx-border-color: #527a7a;" text="Help" textFill="#eeeaea">
+                     <font>
+                        <Font name="Sitka Small Bold Italic" size="20.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#onChatsPageButtonClick" prefHeight="65.0" prefWidth="250.0" style="-fx-background-color: #5c8a8a; -fx-border-color: #527a7a;" text="Chats" textFill="#eeeaea">
+                     <font>
+                        <Font name="Sitka Small Bold Italic" size="20.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#onProfilePageButtonClick" prefHeight="65.0" prefWidth="250.0" style="-fx-background-color: #5c8a8a; -fx-border-color: #527a7a;" text="Profile" textFill="#eeeaea">
+                     <font>
+                        <Font name="Sitka Small Bold Italic" size="20.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#onResourcePageButtonClick" prefHeight="65.0" prefWidth="250.0" style="-fx-background-color: #5c8a8a; -fx-border-color: #527a7a;" text="Resources" textFill="#eeeaea">
+                     <font>
+                        <Font name="Sitka Small Bold Italic" size="20.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#onSettingPageButtonClick" prefHeight="65.0" prefWidth="250.0" style="-fx-background-color: #5c8a8a; -fx-border-color: #527a7a;" text="Setting" textFill="#eeeaea">
+                     <font>
+                        <Font name="Sitka Small Bold Italic" size="20.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#onLogoutButtonClick" prefHeight="65.0" prefWidth="250.0" style="-fx-background-color: #5c8a8a; -fx-border-color: #527a7a;" text="LogOut" textFill="#eeeaea">
+                     <font>
+                        <Font name="Sitka Small Bold Italic" size="20.0" />
+                     </font>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+      </Pane>
+      <Pane layoutX="250.0" layoutY="65.0" prefHeight="535.0" prefWidth="450.0" />
+   </children>
+</AnchorPane>

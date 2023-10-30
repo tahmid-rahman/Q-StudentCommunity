@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.q_studentcommunity.authorizerLogin">
+   <children>
+      <HBox prefHeight="600.0" prefWidth="700.0">
+         <children>
+            <Pane prefHeight="600.0" prefWidth="250.0" style="-fx-background-color: #077c03;" />
+            <Pane prefHeight="600.0" prefWidth="450.0">
+               <children>
+                  <Label layoutX="161.0" layoutY="542.0" text="AUTHORIZER LOGIN" textFill="#5a9961">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="59.0" layoutY="537.0" mnemonicParsing="false" onAction="#onBackToLoginPage" prefHeight="25.0" prefWidth="54.0" style="-fx-background-color: #0ca116;" text="&lt;Back" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <VBox layoutX="86.0" layoutY="200.0" prefHeight="181.0" prefWidth="284.0" spacing="10.0" style="-fx-alignment: center;">
+                     <children>
+                        <HBox prefHeight="87.0" prefWidth="247.0">
+                           <children>
+                              <VBox alignment="CENTER_LEFT" prefHeight="87.0" prefWidth="75.0" spacing="20.0">
+                                 <children>
+                                    <Label prefHeight="17.0" prefWidth="60.0" text="Username" textFill="#0ca116">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Password" textFill="#0d9716">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <padding>
+                                    <Insets right="10.0" top="10.0" />
+                                 </padding>
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                              </VBox>
+                              <VBox alignment="CENTER" prefHeight="87.0" prefWidth="210.0" spacing="10.0">
+                                 <children>
+                                    <TextField fx:id="username" alignment="TOP_LEFT" promptText="Username" />
+                                    <PasswordField fx:id="password" promptText="Password" />
+                                 </children>
+                                 <padding>
+                                    <Insets top="10.0" />
+                                 </padding>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <Button alignment="CENTER" mnemonicParsing="false" onAction="#onLoginButtonClick" prefHeight="26.0" prefWidth="288.0" style="-fx-background-color: #0ca116;" text="Login" textFill="WHITE">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Button>
+                        <Label fx:id="comment" alignment="CENTER" prefHeight="19.0" prefWidth="266.0" textFill="RED">
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <effect>
+                              <Lighting>
+                                 <bumpInput>
+                                    <Shadow />
+                                 </bumpInput>
+                                 <light>
+                                    <Light.Distant />
+                                 </light>
+                              </Lighting>
+                           </effect>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <Line endX="153.0" layoutX="224.0" layoutY="173.0" startX="-152.0" stroke="#067203" strokeWidth="3.0" />
+                  <Text fill="#077c03" layoutX="114.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Student Community">
+                     <font>
+                        <Font name="Arial Bold" size="24.0" />
+                     </font>
+                  </Text>
+                  <Button layoutX="343.0" layoutY="537.0" mnemonicParsing="false" onAction="#onExitButtonClick" prefHeight="25.0" prefWidth="54.0" style="-fx-background-color: #0ca116;" text="Exit&gt;" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+         </children>
+      </HBox>
+   </children>
+</Pane>
