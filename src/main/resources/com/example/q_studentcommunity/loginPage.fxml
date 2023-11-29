@@ -79,7 +79,7 @@
                               </DropShadow>
                            </effect>
                         </Button>
-                        <Hyperlink text="Forgot Password?" textFill="#9976af" />
+                        <Hyperlink onAction="#onForgotPasswordButtonClick" text="Forgot Password?" textFill="#9976af" />
                         <Label fx:id="comment" alignment="CENTER" prefHeight="17.0" prefWidth="348.0" textFill="#ff0505" />
                      </children>
                   </VBox>

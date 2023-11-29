@@ -28,7 +28,7 @@ public class otpVerification {
                 DatabaseConnection connectNow = new DatabaseConnection();
                 Connection connectDB = connectNow.getConnection();
                 Statement statement = connectDB.createStatement();
-                String data = "INSERT INTO logindata(firstname, lastname, id, email, username, password) VALUES ('" + regi.fName + "','" + regi.lName + "','" + regi.sId + "','" + regi.email + "','" + regi.uName + "','" + regi.pass + "')";
+                String data = "INSERT INTO logindata (firstname, lastname, id, email, username, password) VALUES ('" + regi.fName + "','" + regi.lName + "','" + regi.sId + "','" + regi.email + "','" + regi.uName + "','" + regi.pass + "')";
                 statement.executeUpdate(data);
             } catch (Exception e) {
                 e.getCause();

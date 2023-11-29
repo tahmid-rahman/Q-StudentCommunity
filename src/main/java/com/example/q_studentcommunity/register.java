@@ -33,7 +33,7 @@ public class register {
     @FXML Label comment;
 
     public static String fName,lName,uName,sId, email, pass, rePass;
-    public static String otp = Integer.toString(new Random().nextInt((99999-1000+1)+1000));
+    public static String otp = Integer.toString(new Random().nextInt((999999-10000+1)+10000));
 
     @FXML protected void onExitButtonClick(){
         javafx.application.Platform.exit();

@@ -28,6 +28,16 @@ public class loginPage  {
     @FXML protected void onExitButtonClick(){
         javafx.application.Platform.exit();
     }
+    @FXML
+    void onForgotPasswordButtonClick(ActionEvent event) throws IOException {
+
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("forgotPassword.fxml")));
+        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(root));
+        stage.setTitle("Password Recovery");
+        stage.show();
+
+    }
 
 
     @FXML protected void onLoginButtonClick(ActionEvent event){
