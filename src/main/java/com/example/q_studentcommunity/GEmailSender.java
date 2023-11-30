@@ -31,7 +31,7 @@ public class GEmailSender {
 
             Message message = new MimeMessage(session);
             message.setRecipient(Message.RecipientType.TO, new InternetAddress(to));
-            message.setFrom(new InternetAddress(from));
+            message.setFrom(new InternetAddress(from,"QUEUE"));
             message.setSubject(subject);
             message.setText(text);
             Transport.send(message);

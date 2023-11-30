@@ -15,7 +15,17 @@
    <children>
       <Pane prefHeight="600.0" prefWidth="600.0">
          <children>
-            <ImageView fitHeight="377.0" fitWidth="311.0" layoutY="289.0" opacity="0.3" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="165.0" fitWidth="174.0" layoutX="51.0" layoutY="360.0" opacity="0.3" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../file/Pink%20and%20Purple%20Minimal%20Q%20Letter%20Logo%20(2).png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="180.0" fitWidth="193.0" layoutX="103.0" layoutY="50.0" opacity="0.3" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../file/Pink%20and%20Purple%20Minimal%20Q%20Letter%20Logo%20(2).png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="151.0" fitWidth="165.0" layoutX="449.0" layoutY="225.0" opacity="0.3" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../file/Pink%20and%20Purple%20Minimal%20Q%20Letter%20Logo%20(2).png" />
                </image>
@@ -32,11 +42,6 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <ImageView fitHeight="267.0" fitWidth="264.0" layoutX="218.0" layoutY="14.0" opacity="0.3" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../file/Pink%20and%20Purple%20Minimal%20Q%20Letter%20Logo%20(2).png" />
-                     </image>
-                  </ImageView>
                   <Button alignment="CENTER" layoutX="42.0" layoutY="181.0" mnemonicParsing="false" onAction="#onBackToLoginPageClick" prefHeight="25.0" prefWidth="300.0" style="-fx-background-radius: 10; -fx-background-color: #9270a7;" text="Login" textFill="#e8e8e8">
                      <font>
                         <Font name="System Bold" size="18.0" />
@@ -61,11 +66,6 @@
                   </DropShadow>
                </effect>
             </Pane>
-            <ImageView fitHeight="267.0" fitWidth="264.0" layoutX="84.0" opacity="0.3" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../file/Pink%20and%20Purple%20Minimal%20Q%20Letter%20Logo%20(2).png" />
-               </image>
-            </ImageView>
          </children>
       </Pane>
    </children>

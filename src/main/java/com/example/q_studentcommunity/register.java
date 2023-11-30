@@ -34,6 +34,7 @@ public class register {
 
     public static String fName,lName,uName,sId, email, pass, rePass;
     public static String otp = Integer.toString(new Random().nextInt((999999-10000+1)+10000));
+    GEmailSender gEmailSender = new GEmailSender();
 
     @FXML protected void onExitButtonClick(){
         javafx.application.Platform.exit();
@@ -49,7 +50,7 @@ public class register {
 
     }
 
-    @FXML void onSignUpButtonClick(ActionEvent event) throws IOException {
+    @FXML void onSignUpButtonClick(ActionEvent event) throws IOException, SQLException {
         fName = firstname.getText();
         lName = lastname.getText();
         uName = username.getText();
@@ -59,33 +60,51 @@ public class register {
         rePass = rePassword.getText();
         if (fName.isBlank() || lName.isBlank() || uName.isBlank() || sId.isBlank() || email.isBlank() || rePass.isBlank() || pass.isBlank()) {
             comment.setText("must fill all the field");
-        } else {
+        }
+        else {
+            DatabaseConnection connectNow = new DatabaseConnection();
+            Connection connectDB = connectNow.getConnection();
+            Statement statement = connectDB.createStatement();
+            String query = "SELECT * FROM logindata WHERE username = '" + uName + "'";
+            ResultSet resultSet = statement.executeQuery(query);
+            boolean b= resultSet.next();
+            System.out.println(resultSet.next());
+
             if (!pass.equals(rePass)) {
                 comment.setText("*password don't match.");
-//            } else if (pass.length() < 8) {
-//                comment.setText("*password must be at least 8 character.");
-//            } else if (!email.matches("^[a-z]+[0-9]{6,7}+@[a-z]+\\.uiu\\.ac\\.bd$")) {
-//                comment.setText("must use your university mail.");
-//            } else if (!sId.matches("^[0-9]{9,10}$")) {
-//                comment.setText("must use your university student id.");
-            } else {
+////            } else if (pass.length() < 8) {
+////                comment.setText("*password must be at least 8 character.");
+////            } else if (!email.matches("^[a-z]+[0-9]{6,7}+@[a-z]+\\.uiu\\.ac\\.bd$")) {
+////                comment.setText("must use your university mail.");
+////            } else if (!sId.matches("^[0-9]{9,10}$")) {
+////                comment.setText("must use your university student id.");
+            }else if (b) {
+                comment.setText("* Username is already taken.");
 
+
+            } else if(!b){
                 Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("otpVerification.fxml")));
-                Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                 stage.setScene(new Scene(root));
                 stage.setTitle("OTP Panel");
                 stage.show();
 
 
-                GEmailSender gEmailSender = new GEmailSender();
                 String to = email;
                 String from = "roxboy.tahmid@gmail.com";
-                String subject = "Welcome to QUEUE.";
-                String text = "Your verification code is : " + otp;
+                String subject = "Verification Code.";
+                String text = "Your signup OTP is : " + otp;
                 gEmailSender.sendEmail(to, from, subject, text);
 
 
             }
+            else {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setContentText("Unknown Error.\nPlease try again.");
+                alert.show();
+                comment.setText("");
+            }
+      //  comment.setText("");
         }
     }
 

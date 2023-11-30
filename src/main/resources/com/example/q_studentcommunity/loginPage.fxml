@@ -47,7 +47,7 @@
                         <Font name="Britannic Bold" size="24.0" />
                      </font>
                   </Label>
-                  <ImageView fitHeight="134.0" fitWidth="142.0" layoutX="159.0" layoutY="64.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="92.0" fitWidth="92.0" layoutX="179.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../file/Pink%20and%20Purple%20Minimal%20Q%20Letter%20Logo%20(2).png" />
                      </image>
@@ -85,7 +85,7 @@
                   </VBox>
                   <VBox layoutX="57.0" layoutY="429.0" prefHeight="84.0" prefWidth="337.0" spacing="10.0">
                      <children>
-                        <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="337.0" style="-fx-background-color: ef8820;" stylesheets="@../../../../style/style.css" text="Continue with ELMS" textFill="WHITE">
+                        <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="337.0" style="-fx-background-color: ef8820;" stylesheets="@../../../style/style.css" text="Continue with ELMS" textFill="WHITE">
                            <graphic>
                               <ImageView fitHeight="29.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                                  <image>

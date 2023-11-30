@@ -1,0 +1,22 @@
+.selected {
+    -fx-background-color: #F4F5F9;
+}
+
+
+.mouse-move: hover{
+    -fx-background-color: #cccccc;
+}
+
+.background{
+    -fx-background-color: #f4f4f4;
+}
+.img-radius{
+    -fx-border-radius: 10 10 10 10;
+    -fx-background-radius: 10 10 10 10;
+}
+.scroll-pane {
+    -fx-background-color: transparent;
+}
+.scroll-pane .viewport {
+    -fx-background-color: transparent;
+}
