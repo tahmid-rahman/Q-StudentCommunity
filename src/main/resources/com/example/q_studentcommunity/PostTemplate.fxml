@@ -6,85 +6,82 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="455.0" prefWidth="425.0" style="-fx-background-radius: 10;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="415.0" style="-fx-background-color: Transparent;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.q_studentcommunity.PostTemplate">
    <children>
-      <HBox prefHeight="50.0" prefWidth="600.0" spacing="5.0">
+      <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="415.0" style="-fx-background-radius: 10; -fx-background-color: e9e9e9;">
          <children>
-            <ImageView accessibleRole="HYPERLINK" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../file/profile.png" />
-               </image>
-            </ImageView>
-            <VBox prefHeight="35.0" prefWidth="498.0">
+            <HBox prefHeight="50.0" prefWidth="600.0" spacing="5.0">
                <children>
-                  <Label prefHeight="17.0" prefWidth="496.0" text="Username" textFill="#662549">
+                  <ImageView fx:id="profilePic" accessibleRole="HYPERLINK" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../file/profile.png" />
+                     </image>
+                  </ImageView>
+                  <VBox prefHeight="35.0" prefWidth="498.0">
+                     <children>
+                        <Label fx:id="username" prefHeight="17.0" prefWidth="496.0" text="Username" textFill="#662549">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="userType" layoutX="10.0" layoutY="10.0" prefHeight="17.0" prefWidth="496.0" text="user type" textFill="#662549" />
+                     </children>
+                  </VBox>
+                  <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../file/icons8-more-50.png" />
+                     </image>
+                  </ImageView>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </HBox>
+            <Text fx:id="caption" strokeType="OUTSIDE" strokeWidth="0.0" text="text" wrappingWidth="402.13671875" VBox.vgrow="ALWAYS" />
+            <ImageView fx:id="postPic" fitHeight="309.0" fitWidth="319.0" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS">
+               <image>
+                  <Image url="@../file/feed.png" />
+               </image>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="15.0" right="10.0" top="10.0" />
+               </VBox.margin>
+            </ImageView>
+            <HBox layoutX="15.0" layoutY="15.0" prefHeight="39.0" prefWidth="405.0" spacing="5.0" style="-fx-background-color: dedede; -fx-background-radius: 10;">
+               <children>
+                  <ImageView accessibleRole="BUTTON" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../file/Pink%20and%20Purple%20Minimal%20Q%20Letter%20Logo%20(2).png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <Label prefHeight="25.0" prefWidth="86.0" text="Queue" textFill="#662549">
                      <font>
-                        <Font name="System Bold" size="14.0" />
+                        <Font size="14.0" />
                      </font>
                   </Label>
-                  <Label layoutX="10.0" layoutY="10.0" prefHeight="17.0" prefWidth="496.0" text="user type" textFill="#662549" />
+                  <Label fx:id="qPoint" alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="276.0" text=" 0 'Q' point" textAlignment="RIGHT" textFill="#662549" />
                </children>
-            </VBox>
-            <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../file/icons8-more-50.png" />
-               </image>
-            </ImageView>
-         </children>
-         <VBox.margin>
-            <Insets />
-         </VBox.margin>
-         <padding>
-            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-         </padding>
-      </HBox>
-      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
-         <VBox.margin>
-            <Insets left="15.0" />
-         </VBox.margin>
-      </Text>
-      <ImageView fitHeight="300.0" fitWidth="393.0" pickOnBounds="true" preserveRatio="true">
-         <VBox.margin>
-            <Insets bottom="10.0" left="15.0" right="10.0" top="10.0" />
-         </VBox.margin>
-         <image>
-            <Image url="@../file/feed.png" />
-         </image>
-      </ImageView>
-      <HBox layoutX="15.0" layoutY="15.0" prefHeight="30.0" prefWidth="415.0" spacing="5.0">
-         <children>
-            <ImageView accessibleRole="BUTTON" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../file/Pink%20and%20Purple%20Minimal%20Q%20Letter%20Logo%20(2).png" />
-               </image>
-               <HBox.margin>
-                  <Insets left="15.0" />
-               </HBox.margin>
-            </ImageView>
-            <Label prefHeight="25.0" prefWidth="86.0" text="Queue" textFill="#662549">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Label>
-            <Label alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="276.0" text=" 0 'Q' point" textAlignment="RIGHT" textFill="#662549" />
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </HBox>
          </children>
          <padding>
-            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
          </padding>
-      </HBox>
+         <effect>
+            <DropShadow />
+         </effect>
+      </VBox>
    </children>
-   <padding>
-      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-   </padding>
-   <effect>
-      <DropShadow>
-         <color>
-            <Color red="1.0" green="1.0" blue="1.0" />
-         </color></DropShadow>
-   </effect>
-</VBox>
+</Pane>

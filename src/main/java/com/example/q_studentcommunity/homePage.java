@@ -82,13 +82,13 @@ public class homePage implements Initializable {
     }
 
     @FXML private VBox vBox;
-    public ArrayList<Post> post;
+    public ArrayList<Post> posts;
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        post = new ArrayList<>(getList());
+        posts = new ArrayList<>(getList());
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(getClass().getResource("PostTemplate.fxml"));
-        for (Post value : post) {
+        for (Post value : posts) {
 
             try {
                 vBox.getChildren().add(fxmlLoader.load());
@@ -96,12 +96,10 @@ public class homePage implements Initializable {
                 throw new RuntimeException(e);
             }
 
-            PostTemplate postControl = fxmlLoader.getController();
-            if(postControl==null)
-            {
-                System.out.println("fuck you");
-            }
-            postControl.setData(value);
+            PostTemplate postTemplate = new PostTemplate();
+          //  System.out.println(value.caption+" "+value.qPoint+" "+value.username+" "+value.userType+" "+value.DP+" "+value.PP);
+
+            postTemplate.setData(value);
 
         }
 
@@ -110,13 +108,22 @@ public class homePage implements Initializable {
     private List<Post> getList() {
         List<Post> list = new ArrayList<>();
         Post post1 = new Post();
-        post1.setDP("file/dp.jpg");
+        post1.setDP("dp.jpg");
         post1.setUsername("tahmid_rahman");
         post1.setUserType("admin");
         post1.setCaption("hello every one this is the first post of my javafx project. hope you all like it.");
-        post1.setPP("file/1684763460041.jpg");
+        post1.setPP("1684763460041.jpg");
         post1.setqPoint("3 Q_point");
         list.add(post1);
+
+        Post post2 = new Post();
+        post2.setDP("dp.jpg");
+        post2.setUsername("tahmid_rahman");
+        post2.setUserType("admin");
+        post2.setCaption("hello every one this is the first post of my javafx project. hope you all like it.");
+        post2.setPP("1684763460041.jpg");
+        post2.setqPoint("3 Q_point");
+        list.add(post2);
 
         return list;
     }

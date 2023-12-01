@@ -4,6 +4,7 @@ public class Post {
     public String DP;
     public String PP;
     public String caption;
+
     public String username;
     public String userType;
     public String qPoint;
