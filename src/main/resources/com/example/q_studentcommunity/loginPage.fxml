@@ -49,7 +49,7 @@
                   </Label>
                   <ImageView fitHeight="92.0" fitWidth="92.0" layoutX="179.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../file/Pink%20and%20Purple%20Minimal%20Q%20Letter%20Logo%20(2).png" />
+                        <Image url="@file/Pink%20and%20Purple%20Minimal%20Q%20Letter%20Logo%20(2).png" />
                      </image>
                   </ImageView>
                   <VBox alignment="CENTER_RIGHT" layoutX="62.0" layoutY="213.0" prefHeight="154.0" prefWidth="337.0" spacing="10.0">
@@ -89,7 +89,7 @@
                            <graphic>
                               <ImageView fitHeight="29.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../file/unnamed.png" />
+                                    <Image url="@file/unnamed.png" />
                                  </image>
                               </ImageView>
                            </graphic>

@@ -1,28 +1,20 @@
 package com.example.q_studentcommunity;
 
+
 public class Post {
-    public String DP;
-    public String PP;
-    public String caption;
+    private String username;
+    private String caption;
+    private String userType;
+    private String profilePic;
+    private String postPic;
+    private String qPoint;
 
-    public String username;
-    public String userType;
-    public String qPoint;
-
-    public String getDP() {
-        return DP;
+    public String getUsername() {
+        return username;
     }
 
-    public void setDP(String DP) {
-        this.DP = DP;
-    }
-
-    public String getPP() {
-        return PP;
-    }
-
-    public void setPP(String PP) {
-        this.PP = PP;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getCaption() {
@@ -33,20 +25,28 @@ public class Post {
         this.caption = caption;
     }
 
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
     public String getUserType() {
         return userType;
     }
 
     public void setUserType(String userType) {
         this.userType = userType;
+    }
+
+    public String getProfilePic() {
+        return profilePic;
+    }
+
+    public void setProfilePic(String profilePic) {
+        this.profilePic = profilePic;
+    }
+
+    public String getPostPic() {
+        return postPic;
+    }
+
+    public void setPostPic(String postPic) {
+        this.postPic = postPic;
     }
 
     public String getqPoint() {
@@ -56,6 +56,4 @@ public class Post {
     public void setqPoint(String qPoint) {
         this.qPoint = qPoint;
     }
-
-
 }

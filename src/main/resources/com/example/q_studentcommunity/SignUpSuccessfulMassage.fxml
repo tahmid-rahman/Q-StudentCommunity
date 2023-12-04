@@ -17,17 +17,17 @@
          <children>
             <ImageView fitHeight="165.0" fitWidth="174.0" layoutX="51.0" layoutY="360.0" opacity="0.3" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../file/Pink%20and%20Purple%20Minimal%20Q%20Letter%20Logo%20(2).png" />
+                  <Image url="@file/Pink%20and%20Purple%20Minimal%20Q%20Letter%20Logo%20(2).png" />
                </image>
             </ImageView>
             <ImageView fitHeight="180.0" fitWidth="193.0" layoutX="103.0" layoutY="50.0" opacity="0.3" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../file/Pink%20and%20Purple%20Minimal%20Q%20Letter%20Logo%20(2).png" />
+                  <Image url="@file/Pink%20and%20Purple%20Minimal%20Q%20Letter%20Logo%20(2).png" />
                </image>
             </ImageView>
             <ImageView fitHeight="151.0" fitWidth="165.0" layoutX="449.0" layoutY="225.0" opacity="0.3" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../file/Pink%20and%20Purple%20Minimal%20Q%20Letter%20Logo%20(2).png" />
+                  <Image url="@file/Pink%20and%20Purple%20Minimal%20Q%20Letter%20Logo%20(2).png" />
                </image>
             </ImageView>
             <Pane layoutX="120.0" layoutY="153.0" prefHeight="272.0" prefWidth="383.0" style="-fx-background-color: f4f4f4; -fx-background-radius: 10;">

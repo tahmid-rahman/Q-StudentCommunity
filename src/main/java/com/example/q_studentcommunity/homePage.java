@@ -7,6 +7,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -17,7 +19,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
-public class homePage implements Initializable {
+public class homePage implements Initializable{
     @FXML void onLogoutButtonClick(ActionEvent event) throws IOException {
 
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("loginPage.fxml")));
@@ -80,50 +82,44 @@ public class homePage implements Initializable {
         stage.show();
 
     }
+    @FXML Label user;
+    @FXML public VBox PostHolder;
 
-    @FXML private VBox vBox;
-    public ArrayList<Post> posts;
+    @FXML
+    Button feed;
+    public ArrayList<Post> post;
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        posts = new ArrayList<>(getList());
-        FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(getClass().getResource("PostTemplate.fxml"));
-        for (Post value : posts) {
+        post = new ArrayList<>(getList());
+        for (Post value : post) {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("PostTemplate.fxml"));
 
             try {
-                vBox.getChildren().add(fxmlLoader.load());
+                PostHolder.getChildren().add(loader.load());
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
 
-            PostTemplate postTemplate = new PostTemplate();
-          //  System.out.println(value.caption+" "+value.qPoint+" "+value.username+" "+value.userType+" "+value.DP+" "+value.PP);
-
-            postTemplate.setData(value);
+            PostTemplate postControl = loader.getController();
+            postControl.setData(value);
 
         }
 
     }
-
-    private List<Post> getList() {
+    private List<Post> getList(){
         List<Post> list = new ArrayList<>();
-        Post post1 = new Post();
-        post1.setDP("dp.jpg");
-        post1.setUsername("tahmid_rahman");
-        post1.setUserType("admin");
-        post1.setCaption("hello every one this is the first post of my javafx project. hope you all like it.");
-        post1.setPP("1684763460041.jpg");
-        post1.setqPoint("3 Q_point");
-        list.add(post1);
 
-        Post post2 = new Post();
-        post2.setDP("dp.jpg");
-        post2.setUsername("tahmid_rahman");
-        post2.setUserType("admin");
-        post2.setCaption("hello every one this is the first post of my javafx project. hope you all like it.");
-        post2.setPP("1684763460041.jpg");
-        post2.setqPoint("3 Q_point");
-        list.add(post2);
+        for (int i= 0;i<5;i++) {
+            Post p1 = new Post();
+            p1.setProfilePic("file/feed.png");
+            p1.setPostPic("file/feed.png");
+            p1.setCaption("How are You All. I am Al amin From Naogaon");
+            p1.setUsername("Md Nurul Huda Arosh");
+            p1.setUserType("admin");
+            list.add(p1);
+        }
+
 
         return list;
     }

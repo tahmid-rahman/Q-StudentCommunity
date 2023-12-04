@@ -25,24 +25,20 @@
                <children>
                   <VBox layoutX="-3.0" layoutY="155.0" prefHeight="295.0" prefWidth="250.0">
                      <children>
-                        <Button mnemonicParsing="false" onAction="#onOpinionPageButtonClick" prefHeight="25.0" prefWidth="255.0" stylesheets="@../../../style/style.css" text="  Feed         " textFill="#662549">
+                        <Button fx:id="feed" mnemonicParsing="false" onAction="#onOpinionPageButtonClick" prefHeight="44.0" prefWidth="257.0" style="-fx-background-color: #7d3456;" styleClass="mouse-move" stylesheets="@../../../style/style.css" text="  Feed         " textFill="WHITE">
                            <font>
                               <Font name="Lucida Bright" size="20.0" />
                            </font>
                            <graphic>
                               <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../file/news.png" />
+                                    <Image url="@file/news.png" />
                                  </image>
                               </ImageView>
                            </graphic>
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
-                           <styleClass>
-                              <String fx:value="mouse-move" />
-                              <String fx:value="background" />
-                           </styleClass>
                            <VBox.margin>
                               <Insets />
                            </VBox.margin>
@@ -54,7 +50,7 @@
                            <graphic>
                               <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../file/help%20(1).png" />
+                                    <Image url="@file/help%20(1).png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -76,7 +72,7 @@
                            <graphic>
                               <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../file/chat.png" />
+                                    <Image url="@file/chat.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -98,7 +94,7 @@
                            <graphic>
                               <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../file/icons8-folder-48.png" />
+                                    <Image url="@file/icons8-folder-48.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -120,7 +116,7 @@
                            <graphic>
                               <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../file/user-profile.png" />
+                                    <Image url="@file/user-profile.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -142,7 +138,7 @@
                            <graphic>
                               <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../file/user.png" />
+                                    <Image url="@file/user.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -158,12 +154,15 @@
                            </styleClass>
                         </Button>
                      </children>
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
                   </VBox>
                   <HBox accessibleRole="HYPERLINK" alignment="CENTER" layoutX="55.0" layoutY="55.0" onDragDetected="#onOpinionPageButtonClick" prefHeight="50.0" prefWidth="135.0" spacing="5.0">
                      <children>
                         <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../file/Pink%20and%20Purple%20Minimal%20Q%20Letter%20Logo%20(2).png" />
+                              <Image url="@file/Pink%20and%20Purple%20Minimal%20Q%20Letter%20Logo%20(2).png" />
                            </image>
                         </ImageView>
                         <Label text="QUEUE" textFill="#a94773">
@@ -195,13 +194,13 @@
                                        <children>
                                           <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
-                                                <Image url="@../file/icons8-waving-hand-emoji-48.png" />
+                                                <Image url="@file/icons8-waving-hand-emoji-48.png" />
                                              </image>
                                              <HBox.margin>
                                                 <Insets right="5.0" />
                                              </HBox.margin>
                                           </ImageView>
-                                          <Label text="Hello user, Welcome !" textFill="#dddddd" />
+                                          <Label fx:id="user" text="Hello user, Welcome !" textFill="#dddddd" />
                                        </children>
                                     </HBox>
                                  </children>
@@ -215,7 +214,7 @@
                                     <Cursor fx:constant="HAND" />
                                  </cursor>
                                  <image>
-                                    <Image url="@../file/profile.png" />
+                                    <Image url="@file/profile.png" />
                                  </image>
                               </ImageView>
                            </children>
@@ -226,9 +225,9 @@
                               <Insets left="15.0" top="10.0" />
                            </padding>
                         </HBox>
-                        <ScrollPane prefHeight="552.0" prefWidth="450.0" style="-fx-background-radius: 10;" stylesheets="@../../../style/style.css">
+                        <ScrollPane prefHeight="519.0" prefWidth="450.0" style="-fx-background-radius: 10;" stylesheets="@../../../style/style.css">
                            <content>
-                              <VBox fx:id="vBox" alignment="TOP_CENTER" prefHeight="516.0" prefWidth="437.0" spacing="10.0" style="-fx-background-color: transparent;">
+                              <VBox fx:id="PostHolder" alignment="TOP_CENTER" prefHeight="516.0" prefWidth="437.0" spacing="10.0" style="-fx-background-color: transparent;">
                                  <padding>
                                     <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                                  </padding>
@@ -248,7 +247,7 @@
                                              <graphic>
                                                 <ImageView fitHeight="22.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
                                                    <image>
-                                                      <Image url="@../file/icons8-search-64%20(1).png" />
+                                                      <Image url="@file/icons8-search-64%20(1).png" />
                                                    </image>
                                                 </ImageView>
                                              </graphic>
@@ -276,6 +275,9 @@
                            </styleClass>
                         </ScrollPane>
                      </children>
+                     <padding>
+                        <Insets top="5.0" />
+                     </padding>
                   </VBox>
                </children>
             </Pane>

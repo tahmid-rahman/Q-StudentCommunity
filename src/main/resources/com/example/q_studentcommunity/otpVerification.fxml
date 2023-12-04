@@ -24,7 +24,7 @@
                <children>
                   <ImageView fitHeight="600.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../file/Screenshot%202023-11-29%20031145.png" />
+                        <Image url="@file/Screenshot%202023-11-29%20031145.png" />
                      </image>
                   </ImageView>
                   <HBox alignment="CENTER" layoutX="47.0" layoutY="520.0" prefHeight="35.0" prefWidth="153.0">
@@ -40,12 +40,12 @@
                <children>
                   <ImageView fitHeight="145.0" fitWidth="142.0" layoutX="110.0" layoutY="396.0" opacity="0.3" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../file/Pink%20and%20Purple%20Minimal%20Q%20Letter%20Logo%20(2).png" />
+                        <Image url="@file/Pink%20and%20Purple%20Minimal%20Q%20Letter%20Logo%20(2).png" />
                      </image>
                   </ImageView>
                   <ImageView fitHeight="198.0" fitWidth="198.0" layoutX="246.0" layoutY="43.0" opacity="0.3" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../file/Pink%20and%20Purple%20Minimal%20Q%20Letter%20Logo%20(2).png" />
+                        <Image url="@file/Pink%20and%20Purple%20Minimal%20Q%20Letter%20Logo%20(2).png" />
                      </image>
                   </ImageView>
                   <Pane layoutX="83.0" layoutY="174.0" prefHeight="252.0" prefWidth="285.0" style="-fx-background-color: f4f4f4; -fx-background-radius: 10;">

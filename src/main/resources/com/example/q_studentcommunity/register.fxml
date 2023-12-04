@@ -25,7 +25,7 @@
                <children>
                   <ImageView fx:id="logo1" fitHeight="600.0" fitWidth="294.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../file/Screenshot%202023-11-29%20031145.png" />
+                        <Image url="@file/Screenshot%202023-11-29%20031145.png" />
                      </image>
                   </ImageView>
                   <HBox alignment="CENTER" layoutX="49.0" layoutY="537.0" prefHeight="35.0" prefWidth="153.0">
@@ -121,7 +121,7 @@
                   </VBox>
                   <ImageView fx:id="logo2" fitHeight="48.0" fitWidth="67.0" layoutX="142.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../file/Pink%20and%20Purple%20Minimal%20Q%20Letter%20Logo%20(2).png" />
+                        <Image url="@file/Pink%20and%20Purple%20Minimal%20Q%20Letter%20Logo%20(2).png" />
                      </image>
                   </ImageView>
                   <Label alignment="CENTER" layoutX="182.0" layoutY="64.0" prefHeight="34.0" prefWidth="101.0" text="QUEUE" textFill="#c22d7a">
