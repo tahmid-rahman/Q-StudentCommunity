@@ -14,6 +14,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Objects;
 import java.util.Properties;
@@ -23,7 +24,10 @@ public class loginPage  {
     @FXML private Label comment;
     @FXML private TextField Email;
     @FXML private PasswordField password;
-
+    public static String UserName;
+    public static String UserType;
+    public static String E_mail;
+    public static String Password;
 
     @FXML protected void onExitButtonClick(){
         javafx.application.Platform.exit();
@@ -88,7 +92,12 @@ public class loginPage  {
             while (queryResult.next()){
                 if (queryResult.getInt(1)==1){
                   //  comment.setText("login Successful");
+
+                    setUsername(email,pass);
                     loginButton(event);
+                    break;
+
+
 
                 }
                 else {
@@ -99,6 +108,7 @@ public class loginPage  {
                 }
             }
         }catch (Exception e){
+            System.out.println(e.getMessage());
             e.printStackTrace();
             e.getCause();
 
@@ -107,6 +117,21 @@ public class loginPage  {
 
     }
 
+    public void setUsername(String email,String pass){
+
+        try {
+            DatabaseConnection connectNow = new DatabaseConnection();
+            Connection connectDB = connectNow.getConnection();
+            Statement statement = connectDB.createStatement();
+            String query = "SELECT username,email FROM logindata WHERE email='"+email+"' AND password ='"+pass+"'";
+            ResultSet resultSet = statement.executeQuery(query);
+            if(resultSet.next()){UserName = resultSet.getString("username");}
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+            throw new RuntimeException(e);
+        }
+        System.out.println("From login"+UserName);
+    }
 
 
     public void onAuthorizeLoginButtonClick(ActionEvent event) throws IOException {

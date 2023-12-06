@@ -1,12 +1,14 @@
 package com.example.q_studentcommunity;
 
 
+import javafx.scene.image.Image;
+
 public class Post {
     private String username;
     private String caption;
     private String userType;
     private String profilePic;
-    private String postPic;
+    private Image postPic;
     private String qPoint;
 
     public String getUsername() {
@@ -41,11 +43,12 @@ public class Post {
         this.profilePic = profilePic;
     }
 
-    public String getPostPic() {
+
+    public Image getPostPic() {
         return postPic;
     }
 
-    public void setPostPic(String postPic) {
+    public void setPostPic(Image postPic) {
         this.postPic = postPic;
     }
 

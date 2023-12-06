@@ -14,8 +14,8 @@
    <children>
       <HBox prefHeight="12.0" prefWidth="317.0">
          <children>
-            <ImageView fx:id="dp" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" />
-            <VBox prefHeight="37.0" prefWidth="207.0">
+            <ImageView fx:id="dp" fitHeight="37.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true" />
+            <VBox prefHeight="28.0" prefWidth="207.0">
                <children>
                   <Label fx:id="username" prefHeight="17.0" prefWidth="212.0" text="Label" textFill="#7d3456">
                      <font>
@@ -33,7 +33,10 @@
       <ImageView fx:id="pp" pickOnBounds="true" preserveRatio="true">
          <viewport>
             <Rectangle2D />
-         </viewport></ImageView>
+         </viewport>
+         <effect>
+            <DropShadow />
+         </effect></ImageView>
       <HBox prefHeight="34.0" prefWidth="317.0" style="-fx-background-color: #7d3456; -fx-background-radius: 5;" />
    </children>
    <padding>

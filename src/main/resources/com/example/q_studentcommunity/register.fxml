@@ -102,7 +102,7 @@
                               <DropShadow />
                            </effect>
                         </Button>
-                        <Label fx:id="comment" alignment="CENTER" prefHeight="22.0" prefWidth="450.0" text="fg" textAlignment="CENTER" textFill="RED">
+                        <Label fx:id="comment" alignment="CENTER" prefHeight="22.0" prefWidth="450.0" textAlignment="CENTER" textFill="RED">
                            <opaqueInsets>
                               <Insets />
                            </opaqueInsets>

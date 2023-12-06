@@ -15,22 +15,27 @@ public class PostTemplate {
     @FXML ImageView pp;
     @FXML Text caption;
     public void setData(Post post){
-        Image image = new Image(Objects.requireNonNull(getClass().getResourceAsStream(post.getProfilePic())));
-        dp.setImage(image);
-        if(!post.getPostPic().isEmpty()){
-            Image image1 = new Image(Objects.requireNonNull(getClass().getResourceAsStream(post.getPostPic())));
-            //
-            pp.setFitHeight(350);
-            pp.setFitWidth(350);
-            pp.setImage(image1);
-        }else{pp.setVisible(false);}
-        if(!post.getCaption().isEmpty()){
-            caption.setText(post.getCaption());
-        }else{caption.setVisible(false);}
 
-        username.setText(post.getUsername());
+      Image image = new Image(Objects.requireNonNull(getClass().getResourceAsStream(post.getProfilePic())));
+      dp.setImage(image);
 
-        userType.setText(post.getUserType());
+      if(post.getPostPic() != null)
+      {
+          pp.setFitHeight(300);
+          pp.setFitWidth(300);
+          pp.setImage(post.getPostPic());
+      }else {
+          pp.setVisible(false);
+          System.out.println("null value");
+      }
+      if(post.getCaption() != null || !post.getCaption().isEmpty())
+      {
+          caption.setText(post.getCaption());
+      }else {
+          caption.setVisible(false);
+      }
+      username.setText(post.getUsername());
+      userType.setText(post.getUserType());
 
     }
 
