@@ -7,7 +7,7 @@ public class Post {
     private String username;
     private String caption;
     private String userType;
-    private String profilePic;
+    private Image profilePic;
     private Image postPic;
     private String qPoint;
 
@@ -35,11 +35,11 @@ public class Post {
         this.userType = userType;
     }
 
-    public String getProfilePic() {
+    public Image getProfilePic() {
         return profilePic;
     }
 
-    public void setProfilePic(String profilePic) {
+    public void setProfilePic(Image profilePic) {
         this.profilePic = profilePic;
     }
 

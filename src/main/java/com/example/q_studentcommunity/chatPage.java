@@ -1,17 +1,23 @@
 package com.example.q_studentcommunity;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
 import java.util.Objects;
+import java.util.ResourceBundle;
 
-public class chatPage {
+public class chatPage implements Initializable {
+    @FXML private VBox chatHolder;
     @FXML void onLogoutButtonClick(ActionEvent event) throws IOException {
 
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("loginPage.fxml")));
@@ -76,4 +82,30 @@ public class chatPage {
     }
 
 
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+
+        Platform.runLater(new Runnable() {
+            @Override
+            public void run() {
+                for (int i = 0;i<5;i++) {
+                    FXMLLoader loader = new FXMLLoader();
+                    FXMLLoader loader1 = new FXMLLoader();
+                    loader.setLocation(getClass().getResource("senderBox.fxml"));
+                    loader1.setLocation(getClass().getResource("receiverBox.fxml"));
+
+                    try {
+                        chatHolder.getChildren().add(loader1.load());
+                        chatHolder.getChildren().add(loader.load());
+
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
+
+                    //PostTemplate postControl = loader.getController();
+                    //postControl.setData(value);
+                }
+            }
+        });
+    }
 }

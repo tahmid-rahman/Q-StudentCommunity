@@ -11,8 +11,10 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -26,9 +28,16 @@ import java.util.List;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
-import static com.example.q_studentcommunity.loginPage.UserName;
+import static com.example.q_studentcommunity.loginPage.CurrentUserName;
 
 public class homePage implements Initializable {
+
+    @FXML ImageView ProfilePic;
+    @FXML Label user;
+    @FXML private VBox PostHolder;
+
+    @FXML Button feed;
+    public ArrayList<Post> post;
     @FXML
     void onLogoutButtonClick(ActionEvent event) throws IOException {
 
@@ -39,8 +48,7 @@ public class homePage implements Initializable {
         stage.show();
     }
 
-    @FXML
-    protected void onOpinionPageButtonClick(ActionEvent event) throws IOException {
+    @FXML protected void onOpinionPageButtonClick(ActionEvent event) throws IOException {
 
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("homePage.fxml")));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -50,8 +58,7 @@ public class homePage implements Initializable {
 
     }
 
-    @FXML
-    protected void onHelpPageButtonClick(ActionEvent event) throws IOException {
+    @FXML protected void onHelpPageButtonClick(ActionEvent event) throws IOException {
 
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("help.fxml")));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -61,8 +68,7 @@ public class homePage implements Initializable {
 
     }
 
-    @FXML
-    protected void onChatsPageButtonClick(ActionEvent event) throws IOException {
+    @FXML protected void onChatsPageButtonClick(ActionEvent event) throws IOException {
 
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("chatPage.fxml")));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -72,8 +78,7 @@ public class homePage implements Initializable {
 
     }
 
-    @FXML
-    protected void onProfilePageButtonClick(ActionEvent event) throws IOException {
+    @FXML protected void onProfilePageButtonClick(ActionEvent event) throws IOException {
 
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("profilePage.fxml")));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -83,8 +88,7 @@ public class homePage implements Initializable {
 
     }
 
-    @FXML
-    protected void onSettingPageButtonClick(ActionEvent event) throws IOException {
+    @FXML protected void onSettingPageButtonClick(ActionEvent event) throws IOException {
 
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("settingPage.fxml")));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -94,8 +98,7 @@ public class homePage implements Initializable {
 
     }
 
-    @FXML
-    protected void onResourcePageButtonClick(ActionEvent event) throws IOException {
+    @FXML protected void onResourcePageButtonClick(ActionEvent event) throws IOException {
 
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("resourcePage.fxml")));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -105,17 +108,14 @@ public class homePage implements Initializable {
 
     }
 
-    @FXML
-    Label user;
-    @FXML
-    public VBox PostHolder;
 
-    @FXML
-    Button feed;
-    public ArrayList<Post> post;
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        SetUsernameAndProfilepic();
+        user.setText("Hello "+ CurrentUserName +", Welcome !");
+
         post = new ArrayList<>(getList());
 //        for (Post value : post) {
 //            FXMLLoader loader = new FXMLLoader();
@@ -150,7 +150,7 @@ public class homePage implements Initializable {
             }
         });
 
-        System.out.println(UserName);
+       // System.out.println(UserName);
 
     }
 
@@ -177,10 +177,18 @@ public class homePage implements Initializable {
                     Image image = new Image(inputStream);
                     p.setPostPic(image);
                 }else {p.setPostPic(null);}
+
+                Blob blob1 = queryResult.getBlob("profilePic");
+                if(blob1 != null) {
+                    InputStream inputStream = blob1.getBinaryStream();
+                    Image image1 = new Image(inputStream);
+                    p.setProfilePic(image1);
+                }else {p.setProfilePic(null);}
+
                 if(queryResult.getString("caption") != null ) {
                     p.setCaption(queryResult.getString("caption"));
                 }else {p.setCaption("");}
-                p.setProfilePic("file/feed.png");
+              //  p.setProfilePic("file/feed.png");
                 p.setUsername(queryResult.getString("username"));
                 p.setUserType(queryResult.getString("usertype"));
                 list.add(p);
@@ -203,6 +211,7 @@ public class homePage implements Initializable {
             root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("NewPost.fxml")));
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setScene(new Scene(root));
+           // stage.initStyle(StageStyle.UNDECORATED);
             stage.setTitle("Create new post");
             stage.show();
         } catch (IOException e) {
@@ -210,5 +219,32 @@ public class homePage implements Initializable {
             throw new RuntimeException(e);
         }
 
+    }
+    public void SetUsernameAndProfilepic(){
+        DatabaseConnection connectNow = new DatabaseConnection();
+        Connection connectDB = connectNow.getConnection();
+        String getData = "SELECT * FROM logindata WHERE username ='"+CurrentUserName+"' ";
+        try {
+            Statement statement = connectDB.createStatement();
+            ResultSet queryResult = statement.executeQuery(getData);
+
+            while (queryResult.next()){
+                Blob blob = queryResult.getBlob("profilePic");
+                if(blob != null) {
+                    InputStream inputStream = blob.getBinaryStream();
+                    Image image = new Image(inputStream);
+                    ProfilePic.setImage(image);
+                }else {
+                    Image image = new Image(Objects.requireNonNull(getClass().getResourceAsStream("file/profile.png")));
+                    ProfilePic.setImage(image);
+                }
+
+            }
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+            e.printStackTrace();
+            e.getCause();
+
+        }
     }
 }

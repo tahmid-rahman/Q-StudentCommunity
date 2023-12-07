@@ -16,8 +16,16 @@ public class PostTemplate {
     @FXML Text caption;
     public void setData(Post post){
 
-      Image image = new Image(Objects.requireNonNull(getClass().getResourceAsStream(post.getProfilePic())));
-      dp.setImage(image);
+      //
+      if(post.getProfilePic() != null)
+      {
+          dp.setFitHeight(37);
+          dp.setFitWidth(37);
+          dp.setImage(post.getProfilePic());
+      }else {
+          Image image = new Image(Objects.requireNonNull(getClass().getResourceAsStream("file/profile.png")));
+          dp.setImage(image);
+      }
 
       if(post.getPostPic() != null)
       {
@@ -26,7 +34,6 @@ public class PostTemplate {
           pp.setImage(post.getPostPic());
       }else {
           pp.setVisible(false);
-          System.out.println("null value");
       }
       if(post.getCaption() != null || !post.getCaption().isEmpty())
       {

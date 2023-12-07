@@ -17,7 +17,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="500.0" style="-fx-background-radius: 10; -fx-background-color: #515151;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.q_studentcommunity.NewPost">
+<AnchorPane prefHeight="600.0" prefWidth="500.0" style="-fx-background-radius: 10; -fx-background-color: #cdcdcd;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.q_studentcommunity.NewPost">
    <children>
       <Button layoutX="437.0" layoutY="14.0" mnemonicParsing="false" onAction="#onCrossbuttonClick" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: transparent;">
          <graphic>
@@ -30,6 +30,9 @@
                </cursor>
             </ImageView>
          </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
       <VBox alignment="CENTER" layoutX="106.0" layoutY="128.0" prefHeight="422.0" prefWidth="315.0" spacing="10.0">
          <children>
@@ -154,7 +157,7 @@
                         <Font name="Lucida Sans Demibold Roman" size="18.0" />
                      </font>
                   </Label>
-                  <Label fx:id="type" prefHeight="17.0" prefWidth="213.0" text="user type" textFill="#c6b5b5" />
+                  <Label fx:id="type" prefHeight="17.0" prefWidth="213.0" text="user type" textFill="#2f2626" />
                </children>
                <opaqueInsets>
                   <Insets />

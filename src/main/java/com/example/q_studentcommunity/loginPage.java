@@ -24,7 +24,7 @@ public class loginPage  {
     @FXML private Label comment;
     @FXML private TextField Email;
     @FXML private PasswordField password;
-    public static String UserName;
+    public static String CurrentUserName;
     public static String UserType;
     public static String E_mail;
     public static String Password;
@@ -125,12 +125,12 @@ public class loginPage  {
             Statement statement = connectDB.createStatement();
             String query = "SELECT username,email FROM logindata WHERE email='"+email+"' AND password ='"+pass+"'";
             ResultSet resultSet = statement.executeQuery(query);
-            if(resultSet.next()){UserName = resultSet.getString("username");}
+            if(resultSet.next()){CurrentUserName = resultSet.getString("username");}
         } catch (SQLException e) {
             System.out.println(e.getMessage());
             throw new RuntimeException(e);
         }
-        System.out.println("From login"+UserName);
+        System.out.println("From login username is : "+CurrentUserName);
     }
 
 

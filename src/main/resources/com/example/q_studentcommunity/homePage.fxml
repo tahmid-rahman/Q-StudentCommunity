@@ -214,7 +214,7 @@
                                  </opaqueInsets>
                               </VBox>
                               <Pane prefHeight="56.0" prefWidth="183.0" />
-                              <ImageView accessibleRole="BUTTON" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fx:id="ProfilePic" accessibleRole="BUTTON" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
                                  </cursor>
@@ -230,7 +230,7 @@
                               <Insets left="15.0" top="10.0" />
                            </padding>
                         </HBox>
-                        <ScrollPane hbarPolicy="NEVER" prefHeight="519.0" prefWidth="450.0" style="-fx-background-radius: 10;" stylesheets="@../../../style/style.css">
+                        <ScrollPane hbarPolicy="NEVER" prefHeight="519.0" prefWidth="450.0" style="-fx-background-radius: 10;" stylesheets="@../../../style/style.css" vbarPolicy="NEVER">
                            <content>
                               <VBox fx:id="PostHolder" alignment="TOP_CENTER" prefHeight="516.0" prefWidth="437.0" spacing="10.0" style="-fx-background-color: transparent;">
                                  <padding>
@@ -239,7 +239,7 @@
                                  <children>
                                     <HBox alignment="CENTER" prefHeight="30.0" prefWidth="368.0" spacing="5.0">
                                        <children>
-                                          <Button mnemonicParsing="false" onAction="#onCreateNewPostButtonClick" prefHeight="30.0" prefWidth="168.0" style="-fx-background-radius: 20;" styleClass="background" stylesheets="@../../../style/style.css" text="Create new post" textFill="#662549">
+                                          <Button mnemonicParsing="false" onAction="#onCreateNewPostButtonClick" prefHeight="30.0" prefWidth="106.0" style="-fx-background-radius: 20;" styleClass="background" stylesheets="@../../../style/style.css" text="Create post" textFill="#662549">
                                              <effect>
                                                 <DropShadow>
                                                    <color>
@@ -257,11 +257,11 @@
                                                    </image>
                                                 </ImageView>
                                              </graphic>
-                                             <font>
-                                                <Font name="System Bold" size="10.0" />
-                                             </font>
+                                             <HBox.margin>
+                                                <Insets right="3.0" />
+                                             </HBox.margin>
                                           </Button>
-                                          <TextField prefHeight="30.0" prefWidth="195.0" promptText="Search" style="-fx-background-radius: 20;">
+                                          <TextField prefHeight="30.0" prefWidth="237.0" promptText="Search" style="-fx-background-radius: 20;">
                                              <effect>
                                                 <DropShadow>
                                                    <color>
@@ -269,12 +269,15 @@
                                                    </color>
                                                 </DropShadow>
                                              </effect>
+                                             <HBox.margin>
+                                                <Insets left="7.0" />
+                                             </HBox.margin>
                                           </TextField>
-                                          <Button alignment="CENTER" mnemonicParsing="false" prefHeight="30.0" prefWidth="95.0" style="-fx-background-color: white; -fx-background-radius: 20;">
+                                          <Button alignment="CENTER" mnemonicParsing="false" prefHeight="10.0" prefWidth="24.0" style="-fx-background-color: transparent; -fx-background-radius: 20;">
                                              <graphic>
-                                                <ImageView fitHeight="22.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fitHeight="34.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
                                                    <image>
-                                                      <Image url="@file/icons8-search-64%20(1).png" />
+                                                      <Image url="@file/icons8-search-64.png" />
                                                    </image>
                                                 </ImageView>
                                              </graphic>
