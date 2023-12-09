@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="400.0" spacing="10.0" style="-fx-background-color: white; -fx-background-radius: 10;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.q_studentcommunity.HelpPostTemplate">
+   <children>
+      <HBox prefHeight="12.0" prefWidth="317.0">
+         <children>
+            <VBox prefHeight="37.0" prefWidth="354.0">
+               <children>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Label prefHeight="20.0" prefWidth="91.0" text="Topic name : " textFill="#7d3456">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="topicName" prefHeight="23.0" prefWidth="261.0" text="time">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <Label fx:id="time" prefHeight="14.0" prefWidth="350.0" text="time" />
+               </children>
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </VBox>
+         </children>
+      </HBox>
+      <Line endX="16.5" startX="-351.0" />
+      <Text fx:id="cap" strokeType="OUTSIDE" strokeWidth="0.0">
+         <VBox.margin>
+            <Insets left="15.0" />
+         </VBox.margin></Text>
+      <ImageView fx:id="helpPic" pickOnBounds="true" preserveRatio="true">
+         <viewport>
+            <Rectangle2D />
+         </viewport>
+         <effect>
+            <DropShadow />
+         </effect>
+         <VBox.margin>
+            <Insets left="15.0" />
+         </VBox.margin>
+      </ImageView>
+      <HBox alignment="CENTER_LEFT" prefHeight="34.0" prefWidth="317.0" spacing="5.0" style="-fx-background-radius: 5;">
+         <children>
+            <Button mnemonicParsing="false" onAction="#onSeeAnswerButtonClick" prefHeight="30.0" prefWidth="120.0" style="-fx-background-color: #886a9a; -fx-border-radius: 5;" text="See Answer" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <effect>
+                  <DropShadow>
+                     <color>
+                        <Color opacity="0.5" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#onSolveProblemButtonClick" prefHeight="30.0" prefWidth="120.0" style="-fx-background-color: #886a9a; -fx-border-radius: 5;" text="Solve Problem" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <effect>
+                  <DropShadow>
+                     <color>
+                        <Color opacity="0.5" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Button>
+         </children>
+         <padding>
+            <Insets left="10.0" right="10.0" />
+         </padding></HBox>
+   </children>
+   <padding>
+      <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+   </padding>
+   <effect>
+      <DropShadow />
+   </effect>
+</VBox>

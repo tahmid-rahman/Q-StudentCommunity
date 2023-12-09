@@ -47,7 +47,10 @@ public class NewPost implements Initializable {
         selectedFile = fileChooser.showOpenDialog(stage);
         if(selectedFile != null ){
             Image image = new Image(selectedFile.getPath());
+
             imageView.setImage(image);
+            imageView.setFitWidth(200);
+            imageView.setFitHeight(200);
             imagePath = selectedFile.getPath();
             System.out.println(selectedFile.getName());
         }
@@ -79,7 +82,7 @@ public class NewPost implements Initializable {
             store.setString(1,"admin");
             store.setString(3,"3 Point");
             store.setString(5,CurrentUserName);
-            if(selectedFile != null || !caption.getText().isEmpty()){
+            if((selectedFile != null) || !caption.getText().isEmpty()){
 
                 store.execute();
                 UpdateProfilePicIntoPost();
@@ -123,6 +126,8 @@ public class NewPost implements Initializable {
     @FXML private void onCancelButtonClick()  {
         Image image = new Image(Objects.requireNonNull(getClass().getResourceAsStream("file/Screenshot 2023-12-06 082057.png")));
         imageView.setImage(image);
+//        imageView.setFitWidth(0);
+//        imageView.setFitHeight(0);
         selectedFile = null;
     }
 

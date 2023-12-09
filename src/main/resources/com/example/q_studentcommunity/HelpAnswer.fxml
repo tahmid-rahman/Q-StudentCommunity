@@ -16,11 +16,12 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 <?import javafx.scene.text.TextFlow?>
 
-<AnchorPane prefHeight="500.0" prefWidth="500.0" style="-fx-background-radius: 10;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.q_studentcommunity.NewPost">
+<AnchorPane prefHeight="600.0" prefWidth="700.0" style="-fx-background-radius: 10;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.q_studentcommunity.NewPost">
    <children>
-      <Button layoutX="444.0" layoutY="19.0" mnemonicParsing="false" onAction="#onCrossbuttonClick" prefHeight="17.0" prefWidth="12.0" style="-fx-background-color: #794261;">
+      <Button layoutX="657.0" layoutY="20.0" mnemonicParsing="false" onAction="#onCrossbuttonClick" prefHeight="17.0" prefWidth="12.0" style="-fx-background-color: #794261;">
          <graphic>
             <ImageView fx:id="Crossbutton" accessibleRole="BUTTON" fitHeight="20.0" fitWidth="14.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -35,15 +36,20 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <VBox alignment="CENTER" layoutX="97.0" layoutY="146.0" prefWidth="306.0" spacing="10.0">
+      <VBox alignment="TOP_CENTER" layoutX="331.0" layoutY="152.0" prefHeight="423.0" prefWidth="360.0" spacing="10.0" style="-fx-border-color: #c8c8c8;">
          <children>
+            <Label alignment="CENTER" prefHeight="25.0" prefWidth="280.0" text="Answer" textFill="#794261">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
             <ScrollPane hbarPolicy="NEVER" prefHeight="99.0" prefWidth="306.0" stylesheets="@../../../style/style.css" vbarPolicy="NEVER">
                <content>
-                  <VBox alignment="CENTER" spacing="5.0" style="-fx-background-radius: 10;">
+                  <VBox alignment="CENTER" prefHeight="100.0" prefWidth="353.0" spacing="5.0" style="-fx-background-radius: 10;">
                      <children>
                         <TextFlow prefHeight="80.0" prefWidth="275.0">
                            <children>
-                              <TextField fx:id="caption" alignment="TOP_LEFT" prefHeight="79.0" prefWidth="275.0" promptText="What's on your mind ?" style="-fx-background-radius: 10; -fx-background-color: e7e7e7;" />
+                              <TextField fx:id="caption" alignment="TOP_LEFT" prefHeight="79.0" prefWidth="333.0" promptText="Discrive your Problem!" style="-fx-background-radius: 10; -fx-background-color: e7e7e7;" text="Answer description!" />
                            </children>
                         </TextFlow>
                      </children>
@@ -64,7 +70,7 @@
             </ImageView>
             <HBox alignment="CENTER" prefHeight="32.0" prefWidth="287.0" spacing="10.0">
                <children>
-                  <Button mnemonicParsing="false" onAction="#onBrowseButtonClick" prefHeight="30.0" prefWidth="134.0" style="-fx-background-color: #9659ff;" stylesheets="@../../../style/style.css" text="Attach Image" textFill="WHITE">
+                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#onBrowseButtonClick" prefHeight="30.0" prefWidth="156.0" style="-fx-background-color: #9659ff;" stylesheets="@../../../style/style.css" text="Attach Image" textFill="WHITE">
                      <styleClass>
                         <String fx:value="background" />
                         <String fx:value="mouse-move" />
@@ -83,7 +89,7 @@
                         <Cursor fx:constant="OPEN_HAND" />
                      </cursor>
                   </Button>
-                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#onCancelButtonClick" prefHeight="30.0" prefWidth="133.0" style="-fx-background-color: #9659ff;" stylesheets="@../../../style/style.css" text="Remove Image" textFill="WHITE">
+                  <Button alignment="CENTER" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#onCancelButtonClick" prefHeight="30.0" prefWidth="162.0" style="-fx-background-color: #9659ff;" stylesheets="@../../../style/style.css" text="Remove Image" textFill="WHITE">
                      <styleClass>
                         <String fx:value="background" />
                         <String fx:value="mouse-move" />
@@ -107,7 +113,7 @@
                   <Insets />
                </VBox.margin>
             </HBox>
-            <Button mnemonicParsing="false" onAction="#onUploadPostButtonClick" prefHeight="35.0" prefWidth="276.0" style="-fx-background-color: #794261;" stylesheets="@../../../style/style.css" text="Post" textFill="WHITE">
+            <Button mnemonicParsing="false" onAction="#onUploadPostButtonClick" prefHeight="35.0" prefWidth="329.0" style="-fx-background-color: #794261;" stylesheets="@../../../style/style.css" text="Submit Answer" textFill="WHITE">
                <VBox.margin>
                   <Insets />
                </VBox.margin>
@@ -123,41 +129,64 @@
                </cursor>
                <effect>
                   <DropShadow />
-               </effect></Button>
+               </effect>
+            </Button>
          </children>
       </VBox>
-      <Label layoutX="196.0" layoutY="15.0" text="Create Post" textFill="#794261">
+      <Label layoutX="263.0" layoutY="17.0" text="Answer Submiton" textFill="#794261">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
       </Label>
-      <Line endX="250.0" layoutX="250.0" layoutY="55.0" startX="-250.0" stroke="#bcb1b1" />
-      <ImageView fx:id="imageView1" fitHeight="25.0" fitWidth="25.0" layoutX="164.0" layoutY="18.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+      <Line endX="450.0" layoutX="250.0" layoutY="55.0" startX="-250.0" stroke="#bcb1b1" />
+      <ImageView fx:id="imageView1" fitHeight="25.0" fitWidth="25.0" layoutX="231.0" layoutY="20.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@file/icons8-create-post-24.png" />
          </image>
       </ImageView>
-      <HBox layoutX="14.0" layoutY="64.0" prefHeight="45.0" prefWidth="269.0">
+      <HBox alignment="CENTER" layoutX="239.0" layoutY="76.0" prefHeight="25.0" prefWidth="184.0" spacing="10.0">
          <children>
-            <ImageView fx:id="profilePic" fitHeight="45.0" fitWidth="51.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@file/user-profile.png" />
-               </image>
-            </ImageView>
-            <VBox alignment="CENTER" prefHeight="45.0" prefWidth="225.0">
+            <Label alignment="TOP_LEFT" prefHeight="25.0" prefWidth="102.0" text="Topic name :" textFill="#794261">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <TextFlow prefHeight="25.0">
                <children>
-                  <Label fx:id="username" prefHeight="23.0" prefWidth="218.0" text="Username" textFill="#794261">
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="78.13671875">
                      <font>
-                        <Font name="Lucida Sans Demibold Roman" size="18.0" />
+                        <Font size="16.0" />
                      </font>
-                  </Label>
-                  <Label fx:id="type" prefHeight="17.0" prefWidth="213.0" text="user type" textFill="#2f2626" />
+                  </Text>
                </children>
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
-            </VBox>
+            </TextFlow>
          </children>
       </HBox>
+      <ScrollPane hbarPolicy="NEVER" layoutX="14.0" layoutY="152.0" prefHeight="423.0" prefWidth="313.0" style="-fx-border-color: #c8c8c8;" vbarPolicy="NEVER">
+         <content>
+            <VBox prefHeight="422.0" prefWidth="312.0" spacing="15.0">
+               <children>
+                  <Label alignment="CENTER" prefHeight="25.0" prefWidth="280.0" text="Question" textFill="#794261">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <TextFlow prefWidth="190.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="78.13671875">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </TextFlow>
+                  <ImageView fitHeight="200.0" fitWidth="275.0" pickOnBounds="true" preserveRatio="true" />
+               </children>
+               <padding>
+                  <Insets bottom="15.0" left="15.0" right="15.0" />
+               </padding>
+            </VBox>
+         </content>
+      </ScrollPane>
    </children>
 </AnchorPane>

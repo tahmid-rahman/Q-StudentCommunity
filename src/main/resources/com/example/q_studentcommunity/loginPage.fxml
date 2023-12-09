@@ -83,7 +83,7 @@
                         <Label fx:id="comment" alignment="CENTER" prefHeight="17.0" prefWidth="348.0" textFill="#ff0505" />
                      </children>
                   </VBox>
-                  <VBox layoutX="57.0" layoutY="429.0" prefHeight="84.0" prefWidth="337.0" spacing="10.0">
+                  <VBox layoutX="62.0" layoutY="428.0" prefHeight="84.0" prefWidth="337.0" spacing="10.0">
                      <children>
                         <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="337.0" style="-fx-background-color: ef8820;" stylesheets="@../../../style/style.css" text="Continue with ELMS" textFill="WHITE">
                            <graphic>
