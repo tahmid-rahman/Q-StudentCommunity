@@ -6,7 +6,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -16,12 +16,13 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.TextFlow?>
 
-<AnchorPane prefHeight="600.0" prefWidth="500.0" style="-fx-background-radius: 10; -fx-background-color: #cdcdcd;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.q_studentcommunity.NewPost">
+<AnchorPane prefHeight="500.0" prefWidth="500.0" style="-fx-background-radius: 10;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.q_studentcommunity.NewPost">
    <children>
-      <Button layoutX="437.0" layoutY="14.0" mnemonicParsing="false" onAction="#onCrossbuttonClick" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: transparent;">
+      <Button layoutX="444.0" layoutY="19.0" mnemonicParsing="false" onAction="#onCrossbuttonClick" prefHeight="17.0" prefWidth="12.0" style="-fx-background-color: #794261;">
          <graphic>
-            <ImageView fx:id="Crossbutton" accessibleRole="BUTTON" fitHeight="25.0" fitWidth="25.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="Crossbutton" accessibleRole="BUTTON" fitHeight="20.0" fitWidth="14.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@file/icons8-cross-30.png" />
                </image>
@@ -34,25 +35,18 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <VBox alignment="CENTER" layoutX="106.0" layoutY="128.0" prefHeight="422.0" prefWidth="315.0" spacing="10.0">
+      <VBox alignment="CENTER" layoutX="106.0" layoutY="128.0" prefHeight="258.0" prefWidth="317.0" spacing="10.0">
          <children>
-            <ScrollPane prefHeight="388.0" prefWidth="315.0" stylesheets="@../../../style/style.css">
+            <ScrollPane hbarPolicy="NEVER" prefHeight="86.0" prefWidth="315.0" stylesheets="@../../../style/style.css" vbarPolicy="NEVER">
                <content>
                   <VBox alignment="CENTER" spacing="5.0" style="-fx-background-radius: 10;">
                      <children>
-                        <TextArea fx:id="caption" prefHeight="90.0" prefWidth="273.0" promptText="Whats on your mind?" style="-fx-background-color: #cdcdcd;">
-                           <effect>
-                              <DropShadow>
-                                 <color>
-                                    <Color opacity="0.6000000238418579" />
-                                 </color>
-                              </DropShadow>
-                           </effect>
-                        </TextArea>
-                        <ImageView fx:id="imageView" fitHeight="206.0" fitWidth="274.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@file/Screenshot%202023-12-06%20082057.png" />
-                           </image>
+                        <TextFlow prefHeight="36.0" prefWidth="275.0">
+                           <children>
+                              <TextField fx:id="caption" prefHeight="41.0" prefWidth="275.0" promptText="What's on your mind ?" style="-fx-background-radius: 20; -fx-background-color: e7e7e7;" />
+                           </children>
+                        </TextFlow>
+                        <ImageView fx:id="imageView" fitHeight="1.0" fitWidth="108.0" pickOnBounds="true" preserveRatio="true">
                            <effect>
                               <DropShadow>
                                  <color>
@@ -70,7 +64,7 @@
             </ScrollPane>
             <HBox alignment="CENTER" prefHeight="32.0" prefWidth="287.0" spacing="10.0">
                <children>
-                  <Button mnemonicParsing="false" onAction="#onBrowseButtonClick" prefHeight="30.0" prefWidth="134.0" style="-fx-background-color: #9659ff;" stylesheets="@../../../style/style.css" text="Browse" textFill="WHITE">
+                  <Button mnemonicParsing="false" onAction="#onBrowseButtonClick" prefHeight="30.0" prefWidth="134.0" style="-fx-background-color: #9659ff;" stylesheets="@../../../style/style.css" text="Attach Image" textFill="WHITE">
                      <styleClass>
                         <String fx:value="background" />
                         <String fx:value="mouse-move" />
@@ -89,7 +83,7 @@
                         <Cursor fx:constant="OPEN_HAND" />
                      </cursor>
                   </Button>
-                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#onCancelButtonClick" prefHeight="30.0" prefWidth="133.0" style="-fx-background-color: #9659ff;" stylesheets="@../../../style/style.css" text="Cancel" textFill="WHITE">
+                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#onCancelButtonClick" prefHeight="30.0" prefWidth="133.0" style="-fx-background-color: #9659ff;" stylesheets="@../../../style/style.css" text="Remove Image" textFill="WHITE">
                      <styleClass>
                         <String fx:value="background" />
                         <String fx:value="mouse-move" />
@@ -113,7 +107,7 @@
                   <Insets right="18.0" />
                </VBox.margin>
             </HBox>
-            <Button mnemonicParsing="false" onAction="#onUploadPostButtonClick" prefHeight="35.0" prefWidth="276.0" style="-fx-background-color: #f47b1a;" stylesheets="@../../../style/style.css" text="Post" textFill="WHITE">
+            <Button mnemonicParsing="false" onAction="#onUploadPostButtonClick" prefHeight="35.0" prefWidth="276.0" style="-fx-background-color: #794261;" stylesheets="@../../../style/style.css" text="Post" textFill="WHITE">
                <VBox.margin>
                   <Insets right="15.0" top="15.0" />
                </VBox.margin>
@@ -132,15 +126,15 @@
                </effect></Button>
          </children>
       </VBox>
-      <Label layoutX="196.0" layoutY="15.0" text="Create Post" textFill="WHITE">
+      <Label layoutX="196.0" layoutY="15.0" text="Create Post" textFill="#794261">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
       </Label>
-      <Line endX="250.0" layoutX="250.0" layoutY="55.0" startX="-250.0" stroke="WHITE" />
+      <Line endX="250.0" layoutX="250.0" layoutY="55.0" startX="-250.0" stroke="#bcb1b1" />
       <ImageView fx:id="imageView1" fitHeight="25.0" fitWidth="25.0" layoutX="164.0" layoutY="18.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@file/icons8-create-post-25.png" />
+            <Image url="@file/icons8-create-post-24.png" />
          </image>
       </ImageView>
       <HBox layoutX="14.0" layoutY="64.0" prefHeight="45.0" prefWidth="269.0">
@@ -152,7 +146,7 @@
             </ImageView>
             <VBox alignment="CENTER" prefHeight="45.0" prefWidth="225.0">
                <children>
-                  <Label fx:id="username" prefHeight="23.0" prefWidth="218.0" text="Username" textFill="#f47b1a">
+                  <Label fx:id="username" prefHeight="23.0" prefWidth="218.0" text="Username" textFill="#794261">
                      <font>
                         <Font name="Lucida Sans Demibold Roman" size="18.0" />
                      </font>

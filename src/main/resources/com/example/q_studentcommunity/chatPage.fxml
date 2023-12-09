@@ -189,9 +189,12 @@
                                     <Font name="System Bold" size="20.0" />
                                  </font>
                               </Label>
-                              <ScrollPane layoutY="88.0" prefHeight="513.0" prefWidth="200.0" styleClass="background" stylesheets="@../../../style/style.css">
+                              <ScrollPane hbarPolicy="NEVER" layoutY="122.0" prefHeight="477.0" prefWidth="200.0" styleClass="background" stylesheets="@../../../style/style.css" vbarPolicy="NEVER">
                                  <content>
-                                    <VBox prefHeight="510.0" prefWidth="192.0" />
+                                    <VBox fx:id="userList" prefHeight="477.0" prefWidth="200.0" spacing="5.0">
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding></VBox>
                                  </content>
                               </ScrollPane>
                               <HBox layoutX="8.0" layoutY="50.0" prefHeight="26.0" prefWidth="186.0" spacing="5.0">
@@ -226,13 +229,41 @@
                                     </Button>
                                  </children>
                               </HBox>
+                              <HBox alignment="CENTER" layoutX="6.0" layoutY="83.0" prefHeight="25.0" prefWidth="186.0" spacing="10.0">
+                                 <children>
+                                    <Button mnemonicParsing="false" onAction="#onCommunityButtonClick" prefHeight="25.0" prefWidth="86.0" style="-fx-background-color: #6095c0;" text="Community">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                       <effect>
+                                          <DropShadow>
+                                             <color>
+                                                <Color opacity="0.5" />
+                                             </color>
+                                          </DropShadow>
+                                       </effect>
+                                    </Button>
+                                    <Button mnemonicParsing="false" onAction="#onActiveUserClick" prefHeight="25.0" prefWidth="86.0" style="-fx-background-color: #6095c0;" text="Active user">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                       <effect>
+                                          <DropShadow>
+                                             <color>
+                                                <Color opacity="0.5" />
+                                             </color>
+                                          </DropShadow>
+                                       </effect>
+                                    </Button>
+                                 </children>
+                              </HBox>
                            </children>
                         </Pane>
                         <Pane prefHeight="600.0" prefWidth="350.0">
                            <children>
-                              <HBox layoutX="24.0" layoutY="560.0" prefHeight="26.0" prefWidth="313.0" spacing="5.0">
+                              <HBox layoutX="16.0" layoutY="560.0" prefHeight="26.0" prefWidth="321.0" spacing="5.0">
                                  <children>
-                                    <TextField prefHeight="26.0" prefWidth="308.0" style="-fx-background-color: #6095c0; -fx-background-radius: 5;">
+                                    <TextField fx:id="msgField" onAction="#onMsgSendbtn" prefHeight="26.0" prefWidth="285.0" style="-fx-background-color: #6095c0; -fx-background-radius: 5;">
                                        <effect>
                                           <DropShadow>
                                              <color>
@@ -241,7 +272,7 @@
                                           </DropShadow>
                                        </effect>
                                     </TextField>
-                                    <Button mnemonicParsing="false" prefHeight="20.0" prefWidth="34.0" style="-fx-background-color: #6095c0; -fx-background-radius: 5;">
+                                    <Button mnemonicParsing="false" onAction="#onMsgSendbtn" prefHeight="20.0" prefWidth="34.0" style="-fx-background-color: #6095c0; -fx-background-radius: 5;">
                                        <graphic>
                                           <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
@@ -267,12 +298,12 @@
                                     <Circle fx:id="circle" fill="DODGERBLUE" radius="30.0" stroke="#466d8d" strokeType="INSIDE" />
                                     <VBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="255.0">
                                        <children>
-                                          <Label fx:id="username" text="Username" textFill="#395973">
+                                          <Label fx:id="username" text="Username" textFill="#cbc8e1">
                                              <font>
                                                 <Font name="System Bold" size="18.0" />
                                              </font>
                                           </Label>
-                                          <Label fx:id="Email" text="online" textFill="#0f2c63e3" />
+                                          <Label fx:id="Email" text="online" textFill="#041b46e3" />
                                        </children>
                                     </VBox>
                                  </children>
@@ -283,16 +314,13 @@
                                     <Insets bottom="5.0" />
                                  </padding>
                               </HBox>
-                              <ScrollPane hbarPolicy="NEVER" layoutY="80.0" prefHeight="469.0" prefWidth="350.0" stylesheets="@../../../style/style.css" vbarPolicy="NEVER">
+                              <ScrollPane fx:id="scBox" hbarPolicy="NEVER" layoutX="16.0" layoutY="92.0" prefHeight="459.0" prefWidth="328.0" style="-fx-background-color: trasparent;" stylesheets="@../../../style/style.css" vbarPolicy="NEVER">
                                  <content>
-                                    <VBox fx:id="chatHolder" alignment="BOTTOM_CENTER" prefHeight="450.0" prefWidth="325.0" spacing="10.0">
+                                    <VBox fx:id="chatHolder" alignment="BOTTOM_CENTER" prefHeight="457.0" prefWidth="319.0" spacing="10.0" style="-fx-background-color: #d2d2d2; -fx-background-radius: 15;">
                                        <padding>
                                           <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                        </padding></VBox>
                                  </content>
-                                 <padding>
-                                    <Insets bottom="5.0" left="15.0" right="5.0" top="5.0" />
-                                 </padding>
                               </ScrollPane>
                            </children>
                         </Pane>

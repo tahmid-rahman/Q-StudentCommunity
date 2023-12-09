@@ -18,6 +18,7 @@ import javafx.stage.StageStyle;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.Socket;
 import java.net.URL;
 import java.sql.Blob;
 import java.sql.Connection;
@@ -113,6 +114,7 @@ public class homePage implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
         SetUsernameAndProfilepic();
         user.setText("Hello "+ CurrentUserName +", Welcome !");
 

@@ -30,7 +30,7 @@ import static com.example.q_studentcommunity.loginPage.CurrentUserName;
 public class NewPost implements Initializable {
     @FXML ImageView imageView;
     @FXML ImageView profilePic;
-    @FXML TextArea caption;
+    @FXML TextField caption;
     @FXML Label username;
     @FXML Label type;
     Stage stage;
