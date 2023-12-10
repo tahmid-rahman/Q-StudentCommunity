@@ -17,118 +17,122 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.q_studentcommunity.loginPage">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-color: #5b7300;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.q_studentcommunity.loginPage">
    <children>
-      <HBox prefHeight="600.0" prefWidth="700.0">
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="700.0">
          <children>
-            <Pane prefHeight="600.0" prefWidth="250.0" style="-fx-background-color: #dad9d7;">
+            <HBox prefHeight="600.0" prefWidth="700.0">
                <children>
-                  <Pane layoutX="-98.0" layoutY="437.0" prefHeight="200.0" prefWidth="350.0" rotate="45.0" style="-fx-background-color: #9976af;" />
-                  <Pane layoutX="-1.0" layoutY="-66.0" prefHeight="230.0" prefWidth="272.0" rotate="45.0" style="-fx-background-color: b4489b;" />
-                  <Label layoutX="60.0" layoutY="300.0" text="Learn, Share, Get-helped" textFill="#c7327ca9" />
-                  <Label layoutY="265.0" prefHeight="29.0" prefWidth="250.0" style="-fx-alignment: center;" text="&quot;Student Community&quot;" textAlignment="CENTER" textFill="WHITE">
-                     <font>
-                        <Font name="Constantia Bold" size="22.0" />
-                     </font>
-                  </Label>
-                  <HBox alignment="CENTER" layoutX="49.0" layoutY="537.0" prefHeight="35.0" prefWidth="153.0">
+                  <Pane prefHeight="600.0" prefWidth="250.0" style="-fx-background-color: #dad9d7;">
                      <children>
-                        <Hyperlink onAction="#onAuthorizeLoginButtonClick" text="Authorize Login" textFill="#8c2156" />
-                        <Label text="or" />
-                        <Hyperlink onAction="#onExitButtonClick" text="Exit" textFill="#8c2156" />
-                     </children>
-                  </HBox>
-               </children>
-            </Pane>
-            <Pane prefHeight="600.0" prefWidth="450.0" style="-fx-background-color: #FFFFFF;">
-               <children>
-                  <Label layoutX="151.0" layoutY="174.0" text="Welcome back!" textFill="#9976af">
-                     <font>
-                        <Font name="Britannic Bold" size="24.0" />
-                     </font>
-                  </Label>
-                  <ImageView fitHeight="92.0" fitWidth="92.0" layoutX="179.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@file/Pink%20and%20Purple%20Minimal%20Q%20Letter%20Logo%20(2).png" />
-                     </image>
-                  </ImageView>
-                  <VBox alignment="CENTER_RIGHT" layoutX="62.0" layoutY="213.0" prefHeight="154.0" prefWidth="337.0" spacing="10.0">
-                     <children>
-                        <TextField fx:id="Email" promptText="Email" style="-fx-background-color: #E5E4E2;">
+                        <Pane layoutX="-98.0" layoutY="437.0" prefHeight="200.0" prefWidth="350.0" rotate="45.0" style="-fx-background-color: #9976af;" />
+                        <Pane layoutX="-1.0" layoutY="-66.0" prefHeight="230.0" prefWidth="272.0" rotate="45.0" style="-fx-background-color: b4489b;" />
+                        <Label layoutX="60.0" layoutY="300.0" text="Learn, Share, Get-helped" textFill="#c7327ca9" />
+                        <Label layoutY="265.0" prefHeight="29.0" prefWidth="250.0" style="-fx-alignment: center;" text="&quot;Student Community&quot;" textAlignment="CENTER" textFill="WHITE">
                            <font>
-                              <Font size="14.0" />
+                              <Font name="Constantia Bold" size="22.0" />
                            </font>
-                        </TextField>
-                        <PasswordField fx:id="password" prefHeight="26.0" prefWidth="337.0" promptText="Password" style="-fx-background-color: #E5E4E2;">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </PasswordField>
-                        <Button blendMode="DARKEN" mnemonicParsing="false" onAction="#onLoginButtonClick" prefHeight="30.0" prefWidth="337.0" style="-fx-background-color: #9976af;" text="LOGIN" textFill="WHITE">
-                           <font>
-                              <Font name="System Bold" size="16.0" />
-                           </font>
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                           <effect>
-                              <DropShadow height="10.0" radius="3.25" width="5.0">
-                                 <color>
-                                    <Color opacity="0.6030534505844116" />
-                                 </color>
-                              </DropShadow>
-                           </effect>
-                        </Button>
-                        <Hyperlink onAction="#onForgotPasswordButtonClick" text="Forgot Password?" textFill="#9976af" />
-                        <Label fx:id="comment" alignment="CENTER" prefHeight="17.0" prefWidth="348.0" textFill="#ff0505" />
-                     </children>
-                  </VBox>
-                  <VBox layoutX="62.0" layoutY="428.0" prefHeight="84.0" prefWidth="337.0" spacing="10.0">
-                     <children>
-                        <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="337.0" style="-fx-background-color: ef8820;" stylesheets="@../../../style/style.css" text="Continue with ELMS" textFill="WHITE">
-                           <graphic>
-                              <ImageView fitHeight="29.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@file/unnamed.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                           <font>
-                              <Font name="System Bold" size="15.0" />
-                           </font>
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                           <effect>
-                              <DropShadow height="15.0" radius="4.5" width="5.0">
-                                 <color>
-                                    <Color red="0.8941176533699036" green="0.5098039507865906" blue="0.11764705926179886" />
-                                 </color>
-                              </DropShadow>
-                           </effect>
-                        </Button>
-                        <HBox alignment="CENTER" prefHeight="23.0" prefWidth="197.0">
+                        </Label>
+                        <HBox alignment="CENTER" layoutX="49.0" layoutY="537.0" prefHeight="35.0" prefWidth="153.0">
                            <children>
-                              <Label text="Not have an account?" />
-                              <Hyperlink onAction="#onRegisterButtonClick" text="Create one." textFill="#9976af" />
+                              <Hyperlink onAction="#onAuthorizeLoginButtonClick" text="Authorize Login" textFill="#8c2156" />
+                              <Label text="or" />
+                              <Hyperlink onAction="#onExitButtonClick" text="Exit" textFill="#8c2156" />
                            </children>
                         </HBox>
                      </children>
-                  </VBox>
-                  <HBox alignment="CENTER" layoutX="43.0" layoutY="380.0" prefHeight="35.0" prefWidth="376.0" spacing="9.0">
+                  </Pane>
+                  <Pane prefHeight="600.0" prefWidth="450.0" style="-fx-background-color: #FFFFFF;">
                      <children>
-                        <Line endX="70.0" endY="29.0" startX="-75.0" startY="29.0" stroke="#0000007f" />
-                        <Label text="OR" textFill="#00000080">
+                        <Label layoutX="151.0" layoutY="174.0" text="Welcome back!" textFill="#9976af">
                            <font>
-                              <Font name="System Bold" size="14.0" />
+                              <Font name="Britannic Bold" size="24.0" />
                            </font>
                         </Label>
-                        <Line endX="70.0" endY="29.0" startX="-75.0" startY="29.0" stroke="#00000071" />
+                        <ImageView fitHeight="92.0" fitWidth="92.0" layoutX="179.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@file/Pink%20and%20Purple%20Minimal%20Q%20Letter%20Logo%20(2).png" />
+                           </image>
+                        </ImageView>
+                        <VBox alignment="CENTER_RIGHT" layoutX="62.0" layoutY="213.0" prefHeight="154.0" prefWidth="337.0" spacing="10.0">
+                           <children>
+                              <TextField fx:id="Email" promptText="Email" style="-fx-background-color: #E5E4E2;">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </TextField>
+                              <PasswordField fx:id="password" prefHeight="26.0" prefWidth="337.0" promptText="Password" style="-fx-background-color: #E5E4E2;">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </PasswordField>
+                              <Button blendMode="DARKEN" mnemonicParsing="false" onAction="#onLoginButtonClick" prefHeight="30.0" prefWidth="337.0" style="-fx-background-color: #9976af;" text="LOGIN" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                                 <effect>
+                                    <DropShadow height="10.0" radius="3.25" width="5.0">
+                                       <color>
+                                          <Color opacity="0.6030534505844116" />
+                                       </color>
+                                    </DropShadow>
+                                 </effect>
+                              </Button>
+                              <Hyperlink onAction="#onForgotPasswordButtonClick" text="Forgot Password?" textFill="#9976af" />
+                              <Label fx:id="comment" alignment="CENTER" prefHeight="17.0" prefWidth="348.0" textFill="#ff0505" />
+                           </children>
+                        </VBox>
+                        <VBox layoutX="62.0" layoutY="428.0" prefHeight="84.0" prefWidth="337.0" spacing="10.0">
+                           <children>
+                              <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="337.0" style="-fx-background-color: ef8820;" stylesheets="@../../../style/style.css" text="Continue with ELMS" textFill="WHITE">
+                                 <graphic>
+                                    <ImageView fitHeight="29.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@file/unnamed.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                                 <effect>
+                                    <DropShadow height="15.0" radius="4.5" width="5.0">
+                                       <color>
+                                          <Color red="0.8941176533699036" green="0.5098039507865906" blue="0.11764705926179886" />
+                                       </color>
+                                    </DropShadow>
+                                 </effect>
+                              </Button>
+                              <HBox alignment="CENTER" prefHeight="23.0" prefWidth="197.0">
+                                 <children>
+                                    <Label text="Not have an account?" />
+                                    <Hyperlink onAction="#onRegisterButtonClick" text="Create one." textFill="#9976af" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <HBox alignment="CENTER" layoutX="43.0" layoutY="380.0" prefHeight="35.0" prefWidth="376.0" spacing="9.0">
+                           <children>
+                              <Line endX="70.0" endY="29.0" startX="-75.0" startY="29.0" stroke="#0000007f" />
+                              <Label text="OR" textFill="#00000080">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Line endX="70.0" endY="29.0" startX="-75.0" startY="29.0" stroke="#00000071" />
+                           </children>
+                        </HBox>
                      </children>
-                  </HBox>
+                  </Pane>
                </children>
-            </Pane>
+            </HBox>
          </children>
-      </HBox>
+      </AnchorPane>
    </children>
 </AnchorPane>

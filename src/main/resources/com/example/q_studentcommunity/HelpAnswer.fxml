@@ -19,7 +19,7 @@
 <?import javafx.scene.text.Text?>
 <?import javafx.scene.text.TextFlow?>
 
-<AnchorPane prefHeight="600.0" prefWidth="700.0" style="-fx-background-radius: 10;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.q_studentcommunity.NewPost">
+<AnchorPane prefHeight="600.0" prefWidth="700.0" style="-fx-background-radius: 10;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.q_studentcommunity.HelpAnswer">
    <children>
       <Button layoutX="657.0" layoutY="20.0" mnemonicParsing="false" onAction="#onCrossbuttonClick" prefHeight="17.0" prefWidth="12.0" style="-fx-background-color: #794261;">
          <graphic>
@@ -43,13 +43,13 @@
                   <Font name="System Bold" size="16.0" />
                </font>
             </Label>
-            <ScrollPane hbarPolicy="NEVER" prefHeight="99.0" prefWidth="306.0" stylesheets="@../../../style/style.css" vbarPolicy="NEVER">
+            <ScrollPane fx:id="scrollPane" hbarPolicy="NEVER" prefHeight="99.0" prefWidth="306.0" stylesheets="@../../../style/style.css" vbarPolicy="NEVER">
                <content>
                   <VBox alignment="CENTER" prefHeight="100.0" prefWidth="353.0" spacing="5.0" style="-fx-background-radius: 10;">
                      <children>
                         <TextFlow prefHeight="80.0" prefWidth="275.0">
                            <children>
-                              <TextField fx:id="caption" alignment="TOP_LEFT" prefHeight="79.0" prefWidth="333.0" promptText="Discrive your Problem!" style="-fx-background-radius: 10; -fx-background-color: e7e7e7;" text="Answer description!" />
+                              <TextField fx:id="AnswerTF" alignment="TOP_LEFT" prefHeight="79.0" prefWidth="333.0" promptText="Enter your answer!" style="-fx-background-radius: 10; -fx-background-color: e7e7e7;" />
                            </children>
                         </TextFlow>
                      </children>
@@ -59,7 +59,7 @@
                   </VBox>
                </content>
             </ScrollPane>
-            <ImageView fx:id="imageView" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="ansImage" pickOnBounds="true" preserveRatio="true">
                <effect>
                   <DropShadow>
                      <color>
@@ -68,15 +68,15 @@
                   </DropShadow>
                </effect>
             </ImageView>
-            <HBox alignment="CENTER" prefHeight="32.0" prefWidth="287.0" spacing="10.0">
+            <HBox alignment="CENTER" prefHeight="13.0" prefWidth="358.0" spacing="10.0">
                <children>
-                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#onBrowseButtonClick" prefHeight="30.0" prefWidth="156.0" style="-fx-background-color: #9659ff;" stylesheets="@../../../style/style.css" text="Attach Image" textFill="WHITE">
+                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#onAttachImageButtonClick" prefHeight="9.0" prefWidth="156.0" style="-fx-background-color: #9659ff;" stylesheets="@../../../style/style.css" text="Attach Image" textFill="WHITE">
                      <styleClass>
                         <String fx:value="background" />
                         <String fx:value="mouse-move" />
                      </styleClass>
                      <font>
-                        <Font name="System Bold" size="14.0" />
+                        <Font name="System Bold" size="12.0" />
                      </font>
                      <effect>
                         <DropShadow>
@@ -89,13 +89,13 @@
                         <Cursor fx:constant="OPEN_HAND" />
                      </cursor>
                   </Button>
-                  <Button alignment="CENTER" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#onCancelButtonClick" prefHeight="30.0" prefWidth="162.0" style="-fx-background-color: #9659ff;" stylesheets="@../../../style/style.css" text="Remove Image" textFill="WHITE">
+                  <Button alignment="CENTER" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#onRemoveButtonClick" prefHeight="15.0" prefWidth="162.0" style="-fx-background-color: #9659ff;" stylesheets="@../../../style/style.css" text="Remove Image" textFill="WHITE">
                      <styleClass>
                         <String fx:value="background" />
                         <String fx:value="mouse-move" />
                      </styleClass>
                      <font>
-                        <Font name="System Bold" size="14.0" />
+                        <Font name="System Bold" size="12.0" />
                      </font>
                      <effect>
                         <DropShadow>
@@ -113,7 +113,7 @@
                   <Insets />
                </VBox.margin>
             </HBox>
-            <Button mnemonicParsing="false" onAction="#onUploadPostButtonClick" prefHeight="35.0" prefWidth="329.0" style="-fx-background-color: #794261;" stylesheets="@../../../style/style.css" text="Submit Answer" textFill="WHITE">
+            <Button mnemonicParsing="false" onAction="#onSubmitAnswerButtonClick" prefHeight="18.0" prefWidth="329.0" style="-fx-background-color: #794261;" stylesheets="@../../../style/style.css" text="Submit Answer" textFill="WHITE">
                <VBox.margin>
                   <Insets />
                </VBox.margin>
@@ -122,7 +122,7 @@
                   <String fx:value="mouse-move" />
                </styleClass>
                <font>
-                  <Font name="System Bold" size="16.0" />
+                  <Font name="System Bold" size="14.0" />
                </font>
                <cursor>
                   <Cursor fx:constant="OPEN_HAND" />
@@ -144,7 +144,7 @@
             <Image url="@file/icons8-create-post-24.png" />
          </image>
       </ImageView>
-      <HBox alignment="CENTER" layoutX="239.0" layoutY="76.0" prefHeight="25.0" prefWidth="184.0" spacing="10.0">
+      <HBox alignment="CENTER" layoutX="260.0" layoutY="78.0" prefHeight="25.0" spacing="10.0">
          <children>
             <Label alignment="TOP_LEFT" prefHeight="25.0" prefWidth="102.0" text="Topic name :" textFill="#794261">
                <font>
@@ -153,7 +153,7 @@
             </Label>
             <TextFlow prefHeight="25.0">
                <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="78.13671875">
+                  <Text fx:id="topicName" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="78.13671875">
                      <font>
                         <Font size="16.0" />
                      </font>
@@ -173,14 +173,14 @@
                   </Label>
                   <TextFlow prefWidth="190.0">
                      <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="78.13671875">
+                        <Text fx:id="question" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="78.13671875">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </Text>
                      </children>
                   </TextFlow>
-                  <ImageView fitHeight="200.0" fitWidth="275.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="questionImage" fitHeight="200.0" fitWidth="275.0" pickOnBounds="true" preserveRatio="true" />
                </children>
                <padding>
                   <Insets bottom="15.0" left="15.0" right="15.0" />

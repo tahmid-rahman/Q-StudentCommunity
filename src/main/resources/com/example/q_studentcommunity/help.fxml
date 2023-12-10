@@ -228,11 +228,11 @@
                               <Insets left="15.0" top="10.0" />
                            </padding>
                         </HBox>
-                        <HBox alignment="CENTER_RIGHT" prefHeight="18.0" prefWidth="450.0" spacing="5.0" style="-fx-background-radius: 5;">
+                        <HBox alignment="CENTER_RIGHT" prefHeight="13.0" prefWidth="444.0" spacing="5.0" style="-fx-background-radius: 5;">
                            <children>
-                              <Button mnemonicParsing="false" onAction="#onAddHelpPostButtonClick" prefHeight="13.0" prefWidth="81.0" style="-fx-background-color: #f3f3f3; -fx-border-radius: 5;" text="Add Help" textFill="#886a9a">
+                              <Button mnemonicParsing="false" onAction="#onAddHelpPostButtonClick" prefHeight="16.0" prefWidth="107.0" style="-fx-background-color: #f3f3f3; -fx-border-radius: 5;" text="Add Help post" textFill="#886a9a">
                                  <font>
-                                    <Font name="System Bold" size="12.0" />
+                                    <Font name="System Bold" size="11.0" />
                                  </font>
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
@@ -245,9 +245,9 @@
                                     </DropShadow>
                                  </effect>
                               </Button>
-                              <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="133.0" style="-fx-background-color: #f3f3f3; -fx-border-radius: 5;" text="Get help From AI" textFill="#886a9a">
+                              <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="112.0" style="-fx-background-color: #f3f3f3; -fx-border-radius: 5;" text="Get help From AI" textFill="#886a9a">
                                  <font>
-                                    <Font name="System Bold" size="12.0" />
+                                    <Font name="System Bold" size="11.0" />
                                  </font>
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
@@ -264,6 +264,9 @@
                            <padding>
                               <Insets left="10.0" right="10.0" />
                            </padding>
+                           <VBox.margin>
+                              <Insets right="6.0" />
+                           </VBox.margin>
                         </HBox>
                         <ScrollPane hbarPolicy="NEVER" prefHeight="487.0" prefWidth="450.0" style="-fx-background-radius: 10;" stylesheets="@../../../style/style.css" vbarPolicy="NEVER">
                            <content>

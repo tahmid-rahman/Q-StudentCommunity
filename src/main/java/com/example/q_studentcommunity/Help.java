@@ -167,14 +167,12 @@ public class Help implements Initializable {
                     Image image = new Image(inputStream);
                     hp.setHelpPic(image);
                 }else {hp.setHelpPic(null);}
-
-
                 if(queryResult.getString("helpText") != null ) {
                     hp.setHelpCap(queryResult.getString("helpText"));
                 }else {hp.setHelpCap("");}
-                //  p.setProfilePic("file/feed.png");
                 hp.setTopicName(queryResult.getString("topic"));
                 hp.setDateTime(queryResult.getString("date"));
+                hp.setPostId(queryResult.getString("postId"));
                 list.add(hp);
 
             }

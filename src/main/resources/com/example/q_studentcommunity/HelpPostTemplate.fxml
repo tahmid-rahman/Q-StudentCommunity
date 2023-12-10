@@ -35,6 +35,11 @@
                      </children>
                   </HBox>
                   <Label fx:id="time" prefHeight="14.0" prefWidth="350.0" text="time" />
+                  <Label fx:id="postId" visible="false">
+                     <font>
+                        <Font size="1.0" />
+                     </font>
+                  </Label>
                </children>
                <HBox.margin>
                   <Insets left="10.0" />

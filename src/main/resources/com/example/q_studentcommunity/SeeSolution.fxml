@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.TextFlow?>
+
+<AnchorPane prefHeight="600.0" prefWidth="700.0" style="-fx-background-radius: 10;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.q_studentcommunity.SeeSolution">
+   <children>
+      <Button layoutX="657.0" layoutY="20.0" mnemonicParsing="false" onAction="#onCrossbuttonClick" prefHeight="17.0" prefWidth="12.0" style="-fx-background-color: #794261;">
+         <graphic>
+            <ImageView fx:id="Crossbutton" accessibleRole="BUTTON" fitHeight="20.0" fitWidth="14.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@file/icons8-cross-30.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <VBox alignment="TOP_CENTER" layoutX="295.0" layoutY="152.0" prefHeight="423.0" prefWidth="396.0" spacing="10.0" style="-fx-border-color: #c8c8c8;">
+         <children>
+            <Label alignment="CENTER" prefHeight="25.0" prefWidth="280.0" text="Answer" textFill="#794261">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <ScrollPane hbarPolicy="NEVER" prefHeight="386.0" prefWidth="394.0" style="-fx-background-color: Transparent;" vbarPolicy="NEVER">
+               <content>
+                  <VBox fx:id="ansholder" prefHeight="385.0" prefWidth="393.0" spacing="15.0">
+                     <padding>
+                        <Insets bottom="15.0" left="15.0" right="15.0" />
+                     </padding>
+                  </VBox>
+               </content>
+            </ScrollPane>
+         </children>
+      </VBox>
+      <Label layoutX="263.0" layoutY="17.0" text="Answer Submiton" textFill="#794261">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Line endX="450.0" layoutX="250.0" layoutY="55.0" startX="-250.0" stroke="#bcb1b1" />
+      <ImageView fx:id="imageView1" fitHeight="25.0" fitWidth="25.0" layoutX="231.0" layoutY="20.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@file/icons8-create-post-24.png" />
+         </image>
+      </ImageView>
+      <HBox alignment="CENTER" layoutX="239.0" layoutY="76.0" prefHeight="25.0" prefWidth="184.0" spacing="10.0">
+         <children>
+            <Label alignment="TOP_LEFT" prefHeight="25.0" prefWidth="102.0" text="Topic name :" textFill="#794261">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <TextFlow prefHeight="25.0">
+               <children>
+                  <Text fx:id="topicName" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="78.13671875">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Text>
+               </children>
+            </TextFlow>
+         </children>
+      </HBox>
+      <ScrollPane hbarPolicy="NEVER" layoutX="14.0" layoutY="152.0" prefHeight="423.0" prefWidth="273.0" style="-fx-border-color: #c8c8c8;" vbarPolicy="NEVER">
+         <content>
+            <VBox prefHeight="422.0" prefWidth="271.0" spacing="15.0">
+               <children>
+                  <Label alignment="CENTER" prefHeight="25.0" prefWidth="237.0" text="Question" textFill="#794261">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <TextFlow prefHeight="19.0" prefWidth="200.0">
+                     <children>
+                        <Text fx:id="quesText" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="78.13671875">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </TextFlow>
+                  <ImageView fx:id="questionImage" fitHeight="28.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
+               </children>
+               <padding>
+                  <Insets bottom="15.0" left="15.0" right="15.0" />
+               </padding>
+            </VBox>
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>

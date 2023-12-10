@@ -6,7 +6,14 @@ public class HelpPost {
     private String topicName;
     private String helpCap;
     private String dateTime;
+    private String postId;
     private Image helpPic;
+    public String getPostId() {
+        return postId;
+    }
+    public void setPostId(String postId) {
+        this.postId = postId;
+    }
 
     public String getTopicName() {
         return topicName;

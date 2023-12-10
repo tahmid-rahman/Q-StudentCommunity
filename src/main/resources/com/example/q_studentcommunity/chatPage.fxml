@@ -70,7 +70,7 @@
                               <Insets />
                            </VBox.margin>
                         </Button>
-                        <Button layoutX="10.0" layoutY="54.0" mnemonicParsing="false" onAction="#onChatsPageButtonClick" prefHeight="25.0" prefWidth="255.0" style="-fx-background-color: #0e56be;" styleClass="mouse-move" stylesheets="@../../../style/style.css" text="  Chat         " textFill="WHITE">
+                        <Button layoutX="10.0" layoutY="54.0" mnemonicParsing="false" onAction="#onChatsPageButtonClick" prefHeight="25.0" prefWidth="255.0" style="-fx-background-color: #045e51;" styleClass="mouse-move" stylesheets="@../../../style/style.css" text="  Chat         " textFill="WHITE">
                            <font>
                               <Font name="Lucida Bright" size="20.0" />
                            </font>
@@ -178,11 +178,11 @@
                   </HBox>
                </children>
             </Pane>
-            <Pane prefHeight="600.0" prefWidth="550.0" style="-fx-background-color: #0e56be;">
+            <Pane prefHeight="600.0" prefWidth="550.0" style="-fx-background-color: #045e51;">
                <children>
                   <HBox>
                      <children>
-                        <Pane prefHeight="600.0" prefWidth="200.0" style="-fx-border-color: #0a3e8b; -fx-border-width: 0 1 0 0;">
+                        <Pane prefHeight="600.0" prefWidth="200.0" style="-fx-border-color: #012b25; -fx-border-width: 0 1 0 0;">
                            <children>
                               <Label layoutX="14.0" layoutY="14.0" text="Chat" textFill="WHITE">
                                  <font>
@@ -199,7 +199,7 @@
                               </ScrollPane>
                               <HBox layoutX="8.0" layoutY="50.0" prefHeight="26.0" prefWidth="186.0" spacing="5.0">
                                  <children>
-                                    <TextField prefHeight="26.0" prefWidth="147.0" style="-fx-background-color: #6095c0; -fx-background-radius: 5;">
+                                    <TextField prefHeight="26.0" prefWidth="147.0" style="-fx-background-color: #05806d; -fx-background-radius: 5;">
                                        <effect>
                                           <DropShadow>
                                              <color>
@@ -208,7 +208,7 @@
                                           </DropShadow>
                                        </effect>
                                     </TextField>
-                                    <Button mnemonicParsing="false" prefHeight="20.0" prefWidth="34.0" style="-fx-background-color: #6095c0; -fx-background-radius: 5;">
+                                    <Button mnemonicParsing="false" prefHeight="20.0" prefWidth="34.0" style="-fx-background-color: #05806d; -fx-background-radius: 5;">
                                        <graphic>
                                           <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
@@ -231,7 +231,7 @@
                               </HBox>
                               <HBox alignment="CENTER" layoutX="6.0" layoutY="83.0" prefHeight="25.0" prefWidth="186.0" spacing="10.0">
                                  <children>
-                                    <Button mnemonicParsing="false" onAction="#onCommunityButtonClick" prefHeight="25.0" prefWidth="86.0" style="-fx-background-color: #6095c0;" text="Community">
+                                    <Button mnemonicParsing="false" onAction="#onCommunityButtonClick" prefHeight="25.0" prefWidth="86.0" style="-fx-background-color: #05806d;" text="Community" textFill="#cef5e5">
                                        <cursor>
                                           <Cursor fx:constant="HAND" />
                                        </cursor>
@@ -243,7 +243,7 @@
                                           </DropShadow>
                                        </effect>
                                     </Button>
-                                    <Button mnemonicParsing="false" onAction="#onActiveUserClick" prefHeight="25.0" prefWidth="86.0" style="-fx-background-color: #6095c0;" text="Active user">
+                                    <Button mnemonicParsing="false" onAction="#onActiveUserClick" prefHeight="25.0" prefWidth="86.0" style="-fx-background-color: #05806d;" text="Active user" textFill="#cef5e5">
                                        <cursor>
                                           <Cursor fx:constant="HAND" />
                                        </cursor>
@@ -263,7 +263,7 @@
                            <children>
                               <HBox layoutX="16.0" layoutY="560.0" prefHeight="26.0" prefWidth="321.0" spacing="5.0">
                                  <children>
-                                    <TextField fx:id="msgField" onAction="#onMsgSendbtn" prefHeight="26.0" prefWidth="285.0" style="-fx-background-color: #6095c0; -fx-background-radius: 5;">
+                                    <TextField fx:id="msgField" onAction="#onMsgSendbtn" prefHeight="26.0" prefWidth="285.0" style="-fx-background-color: #07aa92; -fx-background-radius: 5;">
                                        <effect>
                                           <DropShadow>
                                              <color>
@@ -272,7 +272,7 @@
                                           </DropShadow>
                                        </effect>
                                     </TextField>
-                                    <Button mnemonicParsing="false" onAction="#onMsgSendbtn" prefHeight="20.0" prefWidth="34.0" style="-fx-background-color: #6095c0; -fx-background-radius: 5;">
+                                    <Button mnemonicParsing="false" onAction="#onMsgSendbtn" prefHeight="20.0" prefWidth="34.0" style="-fx-background-color: #07aa92; -fx-background-radius: 5;">
                                        <graphic>
                                           <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
@@ -293,9 +293,9 @@
                                     </Button>
                                  </children>
                               </HBox>
-                              <HBox alignment="CENTER" layoutY="14.0" prefHeight="60.0" prefWidth="350.0" spacing="15.0" style="-fx-border-color: #0a3e8b; -fx-border-width: 0 0 1 0;">
+                              <HBox alignment="CENTER" layoutY="14.0" prefHeight="60.0" prefWidth="350.0" spacing="15.0" style="-fx-border-color: #012b25; -fx-border-width: 0 0 1 0;">
                                  <children>
-                                    <Circle fx:id="circle" fill="DODGERBLUE" radius="30.0" stroke="#466d8d" strokeType="INSIDE" />
+                                    <Circle fx:id="circle" fill="#2b755351" radius="30.0" stroke="#85909971" strokeType="INSIDE" />
                                     <VBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="255.0">
                                        <children>
                                           <Label fx:id="username" text="Username" textFill="#cbc8e1">
@@ -303,7 +303,7 @@
                                                 <Font name="System Bold" size="18.0" />
                                              </font>
                                           </Label>
-                                          <Label fx:id="Email" text="online" textFill="#041b46e3" />
+                                          <Label fx:id="Email" text="online" textFill="#e3ffe7a6" />
                                        </children>
                                     </VBox>
                                  </children>
