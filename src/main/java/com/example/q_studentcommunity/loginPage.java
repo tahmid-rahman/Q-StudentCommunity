@@ -111,6 +111,8 @@ public class loginPage  {
             System.out.println(e.getMessage());
             e.printStackTrace();
             e.getCause();
+            Alert alert = new Alert(Alert.AlertType.ERROR,"Database Server is off.\nPlease try again latter.",ButtonType.CLOSE);
+            alert.show();
 
         }
 

@@ -9,9 +9,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.control.ScrollPane;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
@@ -118,7 +116,10 @@ public class chatPage implements Initializable {
             dis = new DataInputStream(socket.getInputStream());
             dos = new DataOutputStream(socket.getOutputStream());
             dos.writeUTF(loginPage.CurrentUserName);
-        } catch (IOException e) {
+        } catch (Exception e) {
+
+            Alert alert = new Alert(Alert.AlertType.INFORMATION,"Socket Server is off.\n Wait or contact admin to start server.",ButtonType.OK);
+            alert.show();
             throw new RuntimeException(e);
         }
 
