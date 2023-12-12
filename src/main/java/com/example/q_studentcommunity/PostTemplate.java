@@ -4,12 +4,14 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.paint.ImagePattern;
+import javafx.scene.shape.Circle;
 import javafx.scene.text.Text;
 
 import java.util.Objects;
 
 public class PostTemplate {
-    @FXML ImageView dp;
+    @FXML Circle dp;
     @FXML Label username;
     @FXML Label userType;
     @FXML ImageView pp;
@@ -19,12 +21,10 @@ public class PostTemplate {
       //
       if(post.getProfilePic() != null)
       {
-          dp.setFitHeight(37);
-          dp.setFitWidth(37);
-          dp.setImage(post.getProfilePic());
+          dp.setFill(new ImagePattern(post.getProfilePic()));
       }else {
           Image image = new Image(Objects.requireNonNull(getClass().getResourceAsStream("file/profile.png")));
-          dp.setImage(image);
+          dp.setFill(new ImagePattern(image));
       }
 
       if(post.getPostPic() != null)

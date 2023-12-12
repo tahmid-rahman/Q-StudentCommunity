@@ -179,7 +179,7 @@
             </Pane>
             <Pane prefHeight="600.0" prefWidth="450.0" style="-fx-background-color: #886a9a;">
                <children>
-                  <VBox prefHeight="600.0" prefWidth="450.0" spacing="10.0">
+                  <VBox fx:id="PaneVbox" prefHeight="600.0" prefWidth="450.0" spacing="10.0">
                      <children>
                         <HBox alignment="TOP_CENTER" prefHeight="60.0" prefWidth="443.0">
                            <children>
@@ -245,7 +245,7 @@
                                     </DropShadow>
                                  </effect>
                               </Button>
-                              <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="112.0" style="-fx-background-color: #f3f3f3; -fx-border-radius: 5;" text="Get help From AI" textFill="#886a9a">
+                              <Button mnemonicParsing="false" onAction="#onGetHelpFromAiClick" prefHeight="25.0" prefWidth="112.0" style="-fx-background-color: #f3f3f3; -fx-border-radius: 5;" text="Get help From AI" textFill="#886a9a">
                                  <font>
                                     <Font name="System Bold" size="11.0" />
                                  </font>
@@ -268,7 +268,7 @@
                               <Insets right="6.0" />
                            </VBox.margin>
                         </HBox>
-                        <ScrollPane hbarPolicy="NEVER" prefHeight="487.0" prefWidth="450.0" style="-fx-background-radius: 10;" stylesheets="@../../../style/style.css" vbarPolicy="NEVER">
+                        <ScrollPane fx:id="scrollPane" hbarPolicy="NEVER" prefHeight="487.0" prefWidth="450.0" style="-fx-background-radius: 10;" stylesheets="@../../../style/style.css" vbarPolicy="NEVER">
                            <content>
                               <VBox fx:id="PostHolder" alignment="TOP_CENTER" prefHeight="482.0" prefWidth="449.0" spacing="10.0" style="-fx-background-color: transparent;">
                                  <padding>

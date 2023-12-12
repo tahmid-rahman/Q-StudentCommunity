@@ -1,5 +1,8 @@
 package com.example.q_studentcommunity;
 
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
+
 import java.util.Properties;
 import javax.mail.Session;
 import javax.mail.*;
@@ -36,8 +39,11 @@ public class GEmailSender {
             message.setText(text);
             Transport.send(message);
         } catch (Exception e) {
-            e.printStackTrace();
-            System.out.println("Error in sending massage.");
+            Alert alert = new Alert(Alert.AlertType.ERROR,"You entered a Invalid email address.", ButtonType.CLOSE);
+            alert.show();
+            //throw new SendFailedException;
+           // e.printStackTrace();
+            System.out.println(e.getMessage());
         }
 
     }

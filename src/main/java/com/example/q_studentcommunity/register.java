@@ -1,5 +1,6 @@
 package com.example.q_studentcommunity;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -18,7 +19,7 @@ import java.sql.*;
 import java.util.Objects;
 import java.util.Random;
 
-public class register {
+public class register extends Thread{
 
     @FXML ImageView logo1;
     @FXML ImageView logo2;
@@ -83,18 +84,40 @@ public class register {
 
 
             } else if(!b){
+
                 Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("otpVerification.fxml")));
                 Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                 stage.setScene(new Scene(root));
                 stage.setTitle("OTP Panel");
                 stage.show();
 
+                new Thread(() -> {
+                    try {
 
-                String to = email;
-                String from = "roxboy.tahmid@gmail.com";
-                String subject = "Verification Code.";
-                String text = "Your signup OTP is : " + otp;
-                gEmailSender.sendEmail(to, from, subject, text);
+                        Thread.sleep(100);
+                        Platform.runLater(() -> {
+
+                            try {
+                                String to = email;
+                                String from = "roxboy.tahmid@gmail.com";
+                                String subject = "Verification Code.";
+                                String text = "Your signup OTP is : " + otp;
+                                gEmailSender.sendEmail(to, from, subject, text);
+                            } catch (Exception e) {
+                                throw new RuntimeException(e);
+                            }
+
+                        });
+
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }).start();
+
+
+
+
+
 
 
             }
@@ -106,6 +129,9 @@ public class register {
             }
       //  comment.setText("");
         }
+    }
+    public void run(){
+
     }
 
 

@@ -1,5 +1,6 @@
 package com.example.q_studentcommunity;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -40,7 +41,7 @@ public class forgotPassword {
                 ResultSet resultSet = statement.executeQuery(query);
 
                 if(resultSet.next()){
-                    System.out.println("value found");
+                   // System.out.println("value found");
 
                     Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("ResetPassword.fxml")));
                     Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -48,13 +49,23 @@ public class forgotPassword {
                     stage.setTitle("Reset Password");
                     stage.show();
 
+                    new Thread(() -> {
+                        try {
+                            Thread.sleep(300);
+                            Platform.runLater(() ->{
+                                GEmailSender gEmailSender = new GEmailSender();
+                                String to = email;
+                                String from = "roxboy.tahmid@gmail.com";
+                                String subject = "Welcome to QUEUE.";
+                                String text = "Your \"Reset Password\" OTP is : " + otp;
+                                gEmailSender.sendEmail(to, from, subject, text);
+                            });
+                        } catch (InterruptedException e) {
+                            throw new RuntimeException(e);
+                        }
 
-                    GEmailSender gEmailSender = new GEmailSender();
-                    String to = email;
-                    String from = "roxboy.tahmid@gmail.com";
-                    String subject = "Welcome to QUEUE.";
-                    String text = "Your \"Reset Password\" OTP is : " + otp;
-                    gEmailSender.sendEmail(to, from, subject, text);
+                    }).start();
+
                 }
                 else{
                     Alert alert = new Alert(Alert.AlertType.WARNING);

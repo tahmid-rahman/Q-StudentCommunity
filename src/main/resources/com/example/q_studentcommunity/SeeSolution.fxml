@@ -32,7 +32,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <VBox alignment="TOP_CENTER" layoutX="295.0" layoutY="152.0" prefHeight="423.0" prefWidth="396.0" spacing="10.0" style="-fx-border-color: #c8c8c8;">
+      <VBox alignment="TOP_CENTER" layoutX="260.0" layoutY="152.0" prefHeight="423.0" prefWidth="431.0" spacing="10.0" style="-fx-border-color: #c8c8c8;">
          <children>
             <Label alignment="CENTER" prefHeight="25.0" prefWidth="280.0" text="Answer" textFill="#794261">
                <font>
@@ -41,16 +41,16 @@
             </Label>
             <ScrollPane hbarPolicy="NEVER" prefHeight="386.0" prefWidth="394.0" style="-fx-background-color: Transparent;" vbarPolicy="NEVER">
                <content>
-                  <VBox fx:id="ansholder" prefHeight="385.0" prefWidth="393.0" spacing="15.0">
+                  <VBox fx:id="ansholder" prefHeight="385.0" prefWidth="424.0" spacing="15.0">
                      <padding>
-                        <Insets bottom="15.0" left="15.0" right="15.0" />
+                        <Insets bottom="15.0" left="15.0" right="15.0" top="10.0" />
                      </padding>
                   </VBox>
                </content>
             </ScrollPane>
          </children>
       </VBox>
-      <Label layoutX="263.0" layoutY="17.0" text="Answer Submiton" textFill="#794261">
+      <Label layoutX="263.0" layoutY="17.0" text="solution" textFill="#794261">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
@@ -61,7 +61,7 @@
             <Image url="@file/icons8-create-post-24.png" />
          </image>
       </ImageView>
-      <HBox alignment="CENTER" layoutX="239.0" layoutY="76.0" prefHeight="25.0" prefWidth="184.0" spacing="10.0">
+      <HBox alignment="CENTER" layoutX="231.0" layoutY="73.0" prefHeight="25.0" spacing="10.0">
          <children>
             <Label alignment="TOP_LEFT" prefHeight="25.0" prefWidth="102.0" text="Topic name :" textFill="#794261">
                <font>
@@ -79,16 +79,16 @@
             </TextFlow>
          </children>
       </HBox>
-      <ScrollPane hbarPolicy="NEVER" layoutX="14.0" layoutY="152.0" prefHeight="423.0" prefWidth="273.0" style="-fx-border-color: #c8c8c8;" vbarPolicy="NEVER">
+      <ScrollPane hbarPolicy="NEVER" layoutX="14.0" layoutY="152.0" prefHeight="423.0" prefWidth="238.0" style="-fx-border-color: #c8c8c8;" vbarPolicy="NEVER">
          <content>
-            <VBox prefHeight="422.0" prefWidth="271.0" spacing="15.0">
+            <VBox prefHeight="422.0" prefWidth="212.0" spacing="15.0">
                <children>
                   <Label alignment="CENTER" prefHeight="25.0" prefWidth="237.0" text="Question" textFill="#794261">
                      <font>
                         <Font name="System Bold" size="16.0" />
                      </font>
                   </Label>
-                  <TextFlow prefHeight="19.0" prefWidth="200.0">
+                  <TextFlow prefHeight="19.0" prefWidth="189.0">
                      <children>
                         <Text fx:id="quesText" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="78.13671875">
                            <font>
@@ -97,7 +97,7 @@
                         </Text>
                      </children>
                   </TextFlow>
-                  <ImageView fx:id="questionImage" fitHeight="28.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="questionImage" fitHeight="28.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
                </children>
                <padding>
                   <Insets bottom="15.0" left="15.0" right="15.0" />

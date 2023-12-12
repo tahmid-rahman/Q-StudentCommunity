@@ -10,6 +10,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
@@ -34,6 +35,10 @@ public class Help implements Initializable {
     @FXML
     Label user;
     @FXML private VBox PostHolder;
+    @FXML
+    private ScrollPane scrollPane;
+    @FXML
+    private VBox PaneVbox;
 
     @FXML
     Button feed;
@@ -195,6 +200,24 @@ public class Help implements Initializable {
         stage.setTitle("Create help Post");
         stage.show();
     }
+
+    @FXML
+    void onGetHelpFromAiClick(ActionEvent event) {
+        scrollPane.setVisible(false);
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("AiPage.fxml"));
+
+        try {
+            PaneVbox.getChildren().add(loader.load());
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        AiPage aiPage = loader.getController();
+        //postCollector.getClass()
+
+    }
+
 
 
 

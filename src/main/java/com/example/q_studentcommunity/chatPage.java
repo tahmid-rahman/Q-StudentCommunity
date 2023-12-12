@@ -116,9 +116,11 @@ public class chatPage implements Initializable {
             dis = new DataInputStream(socket.getInputStream());
             dos = new DataOutputStream(socket.getOutputStream());
             dos.writeUTF(loginPage.CurrentUserName);
+            updatePhoto();
+
         } catch (Exception e) {
 
-            Alert alert = new Alert(Alert.AlertType.INFORMATION,"Socket Server is off.\n Wait or contact admin to start server.",ButtonType.OK);
+            Alert alert = new Alert(Alert.AlertType.INFORMATION,"Socket Server is off.\nWait or contact admin to start server.",ButtonType.OK);
             alert.show();
             throw new RuntimeException(e);
         }
@@ -163,6 +165,9 @@ public class chatPage implements Initializable {
         });
         thread.setDaemon(true);
         Platform.runLater(thread::start);
+
+    }
+    private void updatePhoto(){
 
     }
     @FXML

@@ -9,6 +9,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -32,7 +33,7 @@ import static com.example.q_studentcommunity.loginPage.CurrentUserName;
 public class HelpAnswer implements Initializable {
 
     @FXML
-    private TextField AnswerTF;
+    private TextArea AnswerTF;
 
     @FXML
     private ImageView Crossbutton;
@@ -110,7 +111,7 @@ public class HelpAnswer implements Initializable {
                 FileInputStream fileInputStream = new FileInputStream(selectedHelpFile);
                 store.setBinaryStream(2,fileInputStream,fileInputStream.available());
             }else {store.setBinaryStream(2,null);}
-            if(!AnswerTF.getText().isEmpty()){
+            if(!AnswerTF.getText().isEmpty() || AnswerTF.getText() != null ){
                 store.setString(3,AnswerTF.getText());
             }else {store.setString(3,null);}
             store.setString(1,helpPostId);

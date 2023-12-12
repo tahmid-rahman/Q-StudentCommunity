@@ -13,6 +13,8 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.ImagePattern;
+import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -33,9 +35,10 @@ import static com.example.q_studentcommunity.loginPage.CurrentUserName;
 
 public class homePage implements Initializable {
 
-    @FXML ImageView ProfilePic;
+
     @FXML Label user;
     @FXML private VBox PostHolder;
+    @FXML Circle circle;
 
     @FXML Button feed;
     public ArrayList<Post> post;
@@ -235,10 +238,11 @@ public class homePage implements Initializable {
                 if(blob != null) {
                     InputStream inputStream = blob.getBinaryStream();
                     Image image = new Image(inputStream);
-                    ProfilePic.setImage(image);
+                    circle.setFill(new ImagePattern(image));
                 }else {
                     Image image = new Image(Objects.requireNonNull(getClass().getResourceAsStream("file/profile.png")));
-                    ProfilePic.setImage(image);
+                    //ProfilePic.setImage(image);
+                    circle.setFill(new ImagePattern(image));
                 }
 
             }
