@@ -1,14 +1,28 @@
 .selected {
-    -fx-background-color: #7d3456;
-}
 
+}
+.button-background{
+    -fx-background-color: #ffffff;
+}
+.helpPost-button-background{
+     -fx-background-color: #886a9a;
+}
+.move-mouse : hover {
+     -fx-background-color: #a984c0;
+}
 
 .mouse-move: hover{
     -fx-background-color: #cccccc;
 }
+.mouse-hover: hover{
+    -fx-background-color: #e6a111;
+}
 
 .background{
     -fx-background-color: #f4f4f4;
+}
+.background-button{
+    -fx-background-color: #c0870f;
 }
 .img-radius{
     -fx-border-radius: 10 10 10 10;

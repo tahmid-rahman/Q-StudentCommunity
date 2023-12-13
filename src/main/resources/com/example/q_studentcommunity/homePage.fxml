@@ -215,10 +215,13 @@
                                  </opaqueInsets>
                               </VBox>
                               <Pane prefHeight="56.0" prefWidth="177.0" />
-                              <Circle fx:id="circle" fill="#1f93ff00" radius="25.0" stroke="#80004d00" strokeType="INSIDE">
+                              <Circle fx:id="circle" accessibleRole="CONTEXT_MENU" fill="#1f93ff00" onMouseClicked="#onProfileCircleButtonClick" radius="20.0" stroke="#80004d00" strokeType="INSIDE">
                                  <HBox.margin>
                                     <Insets right="15.0" />
                                  </HBox.margin>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
                               </Circle>
                            </children>
                            <opaqueInsets>

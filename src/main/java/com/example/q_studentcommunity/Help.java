@@ -13,7 +13,11 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.ImagePattern;
+import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -28,10 +32,10 @@ import java.util.List;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
+import static com.example.q_studentcommunity.loginPage.CurrentUserName;
+
 public class Help implements Initializable {
 
-    @FXML
-    ImageView ProfilePic;
     @FXML
     Label user;
     @FXML private VBox PostHolder;
@@ -39,9 +43,13 @@ public class Help implements Initializable {
     private ScrollPane scrollPane;
     @FXML
     private VBox PaneVbox;
+    @FXML
+    private Circle profileCricle;
 
     @FXML
     Button feed;
+    @FXML
+    private Pane panToBeUsed;
     public ArrayList<HelpPost> helpost;
     @FXML void onLogoutButtonClick(ActionEvent event) throws IOException {
 
@@ -109,6 +117,7 @@ public class Help implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        SetProfilepic();
        // post = new ArrayList<>(getList());
 //        for (Post value : post) {
 //            FXMLLoader loader = new FXMLLoader();
@@ -203,19 +212,48 @@ public class Help implements Initializable {
 
     @FXML
     void onGetHelpFromAiClick(ActionEvent event) {
-        scrollPane.setVisible(false);
+        PaneVbox.setVisible(false);
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("AiPage.fxml"));
-
         try {
-            PaneVbox.getChildren().add(loader.load());
+            panToBeUsed.getChildren().add(loader.load());
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
 
-        AiPage aiPage = loader.getController();
-        //postCollector.getClass()
+    }
+    public void SetProfilepic(){
+        DatabaseConnection connectNow = new DatabaseConnection();
+        Connection connectDB = connectNow.getConnection();
+        String getData = "SELECT * FROM logindata WHERE username ='"+CurrentUserName+"' ";
+        try {
+            Statement statement = connectDB.createStatement();
+            ResultSet queryResult = statement.executeQuery(getData);
 
+            while (queryResult.next()){
+                Blob blob = queryResult.getBlob("profilePic");
+                if(blob != null) {
+                    InputStream inputStream = blob.getBinaryStream();
+                    Image image = new Image(inputStream);
+                    profileCricle.setFill(new ImagePattern(image));
+                }else {
+                    Image image = new Image(Objects.requireNonNull(getClass().getResourceAsStream("file/profile.png")));
+                    //ProfilePic.setImage(image);
+                    profileCricle.setFill(new ImagePattern(image));
+                }
+
+            }
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+            e.printStackTrace();
+            e.getCause();
+
+        }
+    }
+
+    @FXML
+    void onProfileCircleButtonClick(MouseEvent event) {
+        //scrollPane.getChildrenUnmodifiable().add()
     }
 
 

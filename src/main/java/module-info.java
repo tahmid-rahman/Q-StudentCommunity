@@ -5,6 +5,7 @@ module com.example.q_studentcommunity {
     requires mysql.connector.j;
     requires mail;
     requires java.desktop;
+    requires javafx.web;
 
 
     opens com.example.q_studentcommunity to javafx.fxml;

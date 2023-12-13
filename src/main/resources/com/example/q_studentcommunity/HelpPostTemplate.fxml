@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import javafx.geometry.Insets?>
 <?import javafx.geometry.Rectangle2D?>
 <?import javafx.scene.Cursor?>
@@ -22,12 +23,12 @@
                <children>
                   <HBox prefHeight="100.0" prefWidth="200.0">
                      <children>
-                        <Label prefHeight="20.0" prefWidth="91.0" text="Topic name : " textFill="#7d3456">
+                        <Label prefHeight="20.0" prefWidth="91.0" text="Topic name : " textFill="#886a9a">
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font>
                         </Label>
-                        <Label fx:id="topicName" prefHeight="23.0" prefWidth="261.0" text="time">
+                        <Label fx:id="topicName" prefHeight="23.0" prefWidth="261.0" text="topic name">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -47,7 +48,7 @@
             </VBox>
          </children>
       </HBox>
-      <Line endX="16.5" startX="-351.0" />
+      <Line endX="16.5" startX="-351.0" stroke="#886a9a" />
       <Text fx:id="cap" strokeType="OUTSIDE" strokeWidth="0.0">
          <VBox.margin>
             <Insets left="15.0" />
@@ -63,11 +64,11 @@
             <Insets left="15.0" />
          </VBox.margin>
       </ImageView>
-      <HBox alignment="CENTER_LEFT" prefHeight="34.0" prefWidth="317.0" spacing="5.0" style="-fx-background-radius: 5;">
+      <HBox alignment="CENTER_LEFT" prefHeight="8.0" prefWidth="370.0" spacing="5.0" style="-fx-background-radius: 5;">
          <children>
-            <Button mnemonicParsing="false" onAction="#onSeeAnswerButtonClick" prefHeight="30.0" prefWidth="120.0" style="-fx-background-color: #886a9a; -fx-border-radius: 5;" text="See Answer" textFill="WHITE">
+            <Button mnemonicParsing="false" onAction="#onSeeAnswerButtonClick" prefHeight="14.0" prefWidth="120.0" style="-fx-border-radius: 5;" stylesheets="@../../../style/style.css" text="See Answer" textFill="WHITE">
                <font>
-                  <Font name="System Bold" size="14.0" />
+                  <Font name="System Bold" size="12.0" />
                </font>
                <cursor>
                   <Cursor fx:constant="HAND" />
@@ -79,10 +80,14 @@
                      </color>
                   </DropShadow>
                </effect>
+               <styleClass>
+                  <String fx:value="helpPost-button-background" />
+                  <String fx:value="move-mouse" />
+               </styleClass>
             </Button>
-            <Button mnemonicParsing="false" onAction="#onSolveProblemButtonClick" prefHeight="30.0" prefWidth="120.0" style="-fx-background-color: #886a9a; -fx-border-radius: 5;" text="Solve Problem" textFill="WHITE">
+            <Button mnemonicParsing="false" onAction="#onSolveProblemButtonClick" prefHeight="13.0" prefWidth="120.0" style="-fx-border-radius: 5;" stylesheets="@../../../style/style.css" text="Solve Problem" textFill="WHITE">
                <font>
-                  <Font name="System Bold" size="14.0" />
+                  <Font name="System Bold" size="12.0" />
                </font>
                <cursor>
                   <Cursor fx:constant="HAND" />
@@ -94,6 +99,10 @@
                      </color>
                   </DropShadow>
                </effect>
+               <styleClass>
+                  <String fx:value="helpPost-button-background" />
+                  <String fx:value="move-mouse" />
+               </styleClass>
             </Button>
          </children>
          <padding>
