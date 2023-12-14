@@ -4,10 +4,16 @@
 .button-background{
     -fx-background-color: #ffffff;
 }
+.resource-button-background{
+    -fx-background-color: #ffffff;
+}
+.resource-mouse-hover : hover{
+    -fx-background-color: #ffffff;
+}
 .helpPost-button-background{
      -fx-background-color: #886a9a;
 }
-.move-mouse : hover {
+.w-move-mouse : hover {
      -fx-background-color: #a984c0;
 }
 
@@ -44,4 +50,10 @@
 .pane-border{
     -fx-border-width : 0 0 0 1;
     -fx-border-color : #ffffff;
+}
+.file-background {
+    -fx-background-color : #a58d7f;
+}
+.hover : hover {
+    -fx-background-color: #c3a696;
 }

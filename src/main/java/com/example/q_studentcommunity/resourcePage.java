@@ -25,13 +25,18 @@ public class resourcePage implements Initializable {
     @FXML
     Line line;
     @FXML
-    private Pane pane;
+    public  Pane pane;
     @FXML
     private VBox folderHolder;
     @FXML
     private Button ShowFolder;
     @FXML
-    private ScrollPane scrollbox;
+    public ScrollPane scPane;
+    @FXML
+    private VBox panVbox;
+    @FXML
+    private Pane webPan;
+
 
     @FXML void onLogoutButtonClick(ActionEvent event) throws IOException {
 
@@ -99,10 +104,10 @@ public class resourcePage implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        ShowFolder.setVisible(false);
+        //ShowFolder.setVisible(false);
 
 
-        String fileLocation = "D:\\Q_StudentCommunity\\src\\main\\resources\\com\\example\\q_studentcommunity\\Resources";
+        String fileLocation = "D:\\Q_StudentCommunity\\src\\main\\resources\\Resources";
         File file = new File(fileLocation);
         String[] arr = file.list();
         System.out.println(arr.length);
@@ -131,13 +136,14 @@ public class resourcePage implements Initializable {
 
     @FXML
     void onImportantLinkButtonClick(ActionEvent event) {
-        scrollbox.setVisible(false);
+        panVbox.setVisible(false);
+        scPane.setVisible(false);
         line.setVisible(false);
-        ShowFolder.setVisible(true);
+      //  ShowFolder.setVisible(true);
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("WebViews.fxml"));
         try {
-            pane.getChildren().add(loader.load());
+            webPan.getChildren().add(loader.load());
             //FolderName folderName = loader.getController();
             //folderName.SetButtonText(i);
         } catch (IOException e) {

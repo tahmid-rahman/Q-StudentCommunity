@@ -7,8 +7,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.text.Font?>
 
-
-<Button fx:id="button" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="22.0" prefWidth="700.0" stylesheets="@../../../style/style.css" text="Button" textFill="WHITE" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.q_studentcommunity.FolderName">
+<Button fx:id="button" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#buttonClick" prefHeight="22.0" prefWidth="700.0" stylesheets="@../../../style/style.css" text="Button" textFill="WHITE" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.q_studentcommunity.FolderName">
    <graphic>
       <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
          <image>

@@ -178,13 +178,13 @@
                   </HBox>
                </children>
             </Pane>
-            <Pane prefHeight="600.0" prefWidth="450.0" style="-fx-background-color: c0870f;">
+            <Pane fx:id="webPan" prefHeight="600.0" prefWidth="450.0" style="-fx-background-color: c0870f;">
                <children>
-                  <VBox prefHeight="600.0" prefWidth="450.0" spacing="10.0">
+                  <VBox fx:id="panVbox" prefHeight="600.0" prefWidth="450.0" spacing="10.0">
                      <children>
-                        <HBox alignment="CENTER" prefHeight="66.0" prefWidth="450.0">
+                        <HBox alignment="CENTER_LEFT" prefHeight="56.0">
                            <children>
-                              <VBox prefHeight="56.0" prefWidth="371.0">
+                              <VBox alignment="CENTER_LEFT" prefHeight="56.0" prefWidth="380.0">
                                  <children>
                                     <Label prefHeight="28.0" text="Resource" textFill="#dddddd">
                                        <font>
@@ -218,11 +218,47 @@
                            <opaqueInsets>
                               <Insets />
                            </opaqueInsets>
-                           <padding>
-                              <Insets left="15.0" top="10.0" />
-                           </padding>
                         </HBox>
-                        <HBox alignment="CENTER" prefHeight="30.0" prefWidth="430.0" spacing="5.0">
+                        <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="86.0" prefHeight="25.0" spacing="5.0">
+                           <children>
+                              <Button fx:id="ShowFolder" alignment="CENTER" mnemonicParsing="false" onAction="#onShowFolderButtonClick" prefHeight="30.0" style="-fx-background-radius: 5;" stylesheets="@../../../style/style.css" text="Show folder" textFill="#c0870f">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                                 <effect>
+                                    <DropShadow>
+                                       <color>
+                                          <Color opacity="0.5954198241233826" />
+                                       </color>
+                                    </DropShadow>
+                                 </effect>
+                                 <styleClass>
+                                    <String fx:value="mouse-move" />
+                                    <String fx:value="button-background" />
+                                 </styleClass>
+                              </Button>
+                              <Button alignment="CENTER" layoutX="347.0" layoutY="10.0" mnemonicParsing="false" onAction="#onImportantLinkButtonClick" prefHeight="30.0" style="-fx-background-radius: 5;" stylesheets="@../../../style/style.css" text="Important Websites" textFill="#c0870f">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                                 <effect>
+                                    <DropShadow>
+                                       <color>
+                                          <Color opacity="0.5954198241233826" />
+                                       </color>
+                                    </DropShadow>
+                                 </effect>
+                                 <styleClass>
+                                    <String fx:value="mouse-move" />
+                                    <String fx:value="button-background" />
+                                 </styleClass>
+                              </Button>
+                           </children>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="30.0" spacing="5.0">
                            <children>
                               <TextField prefHeight="30.0" prefWidth="365.0" promptText="Search" style="-fx-background-radius: 10;">
                                  <effect>
@@ -261,51 +297,12 @@
                               </Button>
                            </children>
                         </HBox>
-                        <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="86.0" prefHeight="30.0" prefWidth="430.0" spacing="5.0">
+                        <Line fx:id="line" endX="229.5" startX="-185.0" stroke="#8d630b" />
+                        <Pane fx:id="pane" prefHeight="418.0" prefWidth="441.0">
                            <children>
-                              <Button fx:id="ShowFolder" alignment="CENTER" mnemonicParsing="false" onAction="#onShowFolderButtonClick" prefHeight="30.0" style="-fx-background-radius: 5;" stylesheets="@../../../style/style.css" text="Show folder" textFill="#c0870f">
-                                 <cursor>
-                                    <Cursor fx:constant="HAND" />
-                                 </cursor>
-                                 <effect>
-                                    <DropShadow>
-                                       <color>
-                                          <Color opacity="0.5954198241233826" />
-                                       </color>
-                                    </DropShadow>
-                                 </effect>
-                                 <styleClass>
-                                    <String fx:value="mouse-move" />
-                                    <String fx:value="button-background" />
-                                 </styleClass>
-                              </Button>
-                              <Button alignment="CENTER" layoutX="347.0" layoutY="10.0" mnemonicParsing="false" onAction="#onImportantLinkButtonClick" prefHeight="30.0" style="-fx-background-radius: 5;" stylesheets="@../../../style/style.css" text="Important Link" textFill="#c0870f">
-                                 <cursor>
-                                    <Cursor fx:constant="HAND" />
-                                 </cursor>
-                                 <effect>
-                                    <DropShadow>
-                                       <color>
-                                          <Color opacity="0.5954198241233826" />
-                                       </color>
-                                    </DropShadow>
-                                 </effect>
-                                 <styleClass>
-                                    <String fx:value="mouse-move" />
-                                    <String fx:value="button-background" />
-                                 </styleClass>
-                              </Button>
-                           </children>
-                           <VBox.margin>
-                              <Insets right="20.0" />
-                           </VBox.margin>
-                        </HBox>
-                        <Line fx:id="line" endX="264.5" startX="-185.0" stroke="#8d630b" />
-                        <Pane fx:id="pane" prefHeight="485.0" prefWidth="450.0">
-                           <children>
-                              <ScrollPane fx:id="scrollbox" hbarPolicy="NEVER" layoutX="1.0" layoutY="-5.0" prefHeight="435.0" prefWidth="445.0" style="-fx-background-color: Transparent;" stylesheets="@../../../style/style.css" vbarPolicy="NEVER">
+                              <ScrollPane fx:id="scPane" hbarPolicy="NEVER" layoutX="1.0" layoutY="-5.0" prefHeight="435.0" prefWidth="433.0" style="-fx-background-color: Transparent;" stylesheets="@../../../style/style.css" vbarPolicy="NEVER">
                                  <content>
-                                    <VBox fx:id="folderHolder" prefHeight="441.0" prefWidth="449.0" spacing="5.0">
+                                    <VBox fx:id="folderHolder" prefHeight="441.0" prefWidth="431.0" spacing="5.0">
                                        <padding>
                                           <Insets left="10.0" />
                                        </padding>
@@ -315,8 +312,14 @@
                            </children>
                         </Pane>
                      </children>
+                     <padding>
+                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                     </padding>
                   </VBox>
-               </children></Pane>
+               </children>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin></Pane>
          </children>
       </HBox>
    </children>

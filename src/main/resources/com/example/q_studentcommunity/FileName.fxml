@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.text.Font?>
+
+<Button fx:id="FileName" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#FileButtonClick" prefHeight="33.0" prefWidth="640.0" stylesheets="@../../../style/style.css" text="Button" textFill="WHITE" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.q_studentcommunity.FileName">
+   <font>
+      <Font size="13.0" />
+   </font>
+   <cursor>
+      <Cursor fx:constant="OPEN_HAND" />
+   </cursor>
+   <styleClass>
+      <String fx:value="file-background" />
+      <String fx:value="mouse-move" />
+   </styleClass>
+</Button>
