@@ -183,7 +183,7 @@
                   </Button>
                </children>
             </Pane>
-            <Pane style="-fx-background-color: #7d3456;">
+            <Pane prefHeight="600.0" prefWidth="450.0" style="-fx-background-color: #7d3456;">
                <children>
                   <VBox prefHeight="600.0" prefWidth="450.0" spacing="10.0">
                      <children>
@@ -298,7 +298,8 @@
                                           <Insets bottom="10.0" />
                                        </VBox.margin>
                                     </HBox>
-                                 </children></VBox>
+                                 </children>
+                              </VBox>
                            </content>
                            <styleClass>
                               <String fx:value="scroll-pane" />
@@ -314,5 +315,75 @@
             </Pane>
          </children>
       </HBox>
+      <Pane fx:id="popUpPane" layoutX="472.0" layoutY="60.0">
+         <effect>
+            <DropShadow />
+         </effect>
+         <children>
+            <VBox layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="200.0" minWidth="200.0" style="-fx-background-color: #a34370; -fx-background-radius: 10;">
+               <children>
+                  <HBox alignment="CENTER_RIGHT">
+                     <children>
+                        <ImageView fitHeight="38.0" fitWidth="33.0" onMouseClicked="#onPopUpCrossButton" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@file/icons8-cancel-60.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="OPEN_HAND" />
+                           </cursor>
+                        </ImageView>
+                     </children>
+                  </HBox>
+                  <Button fx:id="popUpUsername" alignment="TOP_LEFT" minWidth="200.0" mnemonicParsing="false" onAction="#onProfilePageButtonClick" prefHeight="25.0" stylesheets="@../../../style/style.css" text="Username" textFill="WHITE">
+                     <graphic>
+                        <Circle fx:id="popUpCircle" fill="#1f93ff00" radius="19.0" stroke="#00000037" strokeType="INSIDE" />
+                     </graphic>
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="button-mouse-hover" />
+                        <String fx:value="popUp-background" />
+                     </styleClass>
+                  </Button>
+                  <Button alignment="TOP_LEFT" layoutX="15.0" layoutY="58.0" minWidth="200.0" mnemonicParsing="false" onAction="#onSettingPageButtonClick" prefHeight="25.0" stylesheets="@../../../style/style.css" text=" Setting" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="34.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@file/icons8-setting-50.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="button-mouse-hover" />
+                        <String fx:value="popUp-background" />
+                     </styleClass>
+                  </Button>
+                  <Button alignment="TOP_LEFT" layoutX="15.0" layoutY="105.0" minWidth="200.0" mnemonicParsing="false" onAction="#onLogoutButtonClick" prefHeight="25.0" stylesheets="@../../../style/style.css" text="Log Out" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@file/icons8-log-out-64.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="button-mouse-hover" />
+                        <String fx:value="popUp-background" />
+                     </styleClass>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </VBox>
+         </children>
+      </Pane>
    </children>
 </AnchorPane>

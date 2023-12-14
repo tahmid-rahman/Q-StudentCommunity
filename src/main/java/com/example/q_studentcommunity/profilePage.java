@@ -135,6 +135,10 @@ public class profilePage implements Initializable {
         });
 
     }
+    @FXML
+    void onEditButtonClick(ActionEvent event) {
+
+    }
 
     private void SetEmailAndProfilePic() {
         DatabaseConnection connectNow = new DatabaseConnection();

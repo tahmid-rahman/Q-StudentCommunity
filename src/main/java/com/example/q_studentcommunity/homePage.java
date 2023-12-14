@@ -15,6 +15,7 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
@@ -42,9 +43,18 @@ public class homePage implements Initializable {
     @FXML Label user;
     @FXML private VBox PostHolder;
     @FXML Circle circle;
-
     @FXML Button feed;
+    @FXML private Pane popUpPane;
+    @FXML private Circle popUpCircle;
+    @FXML private Button popUpUsername;
+
+
     public ArrayList<Post> post;
+    @FXML
+    void onPopUpCrossButton(MouseEvent event) {
+        popUpPane.setVisible(false);
+    }
+
     @FXML
     void onLogoutButtonClick(ActionEvent event) throws IOException {
 
@@ -122,7 +132,9 @@ public class homePage implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
 
         SetUsernameAndProfilepic();
+        popUpPane.setVisible(false);
         user.setText("Hello "+ CurrentUserName +", Welcome !");
+        popUpUsername.setText(CurrentUserName);
 
         post = new ArrayList<>(getList());
 //        for (Post value : post) {
@@ -140,6 +152,7 @@ public class homePage implements Initializable {
 //
 //        }\
         Platform.runLater(new Runnable() {
+
             @Override
             public void run() {
                 for (Post value : post) {
@@ -242,10 +255,12 @@ public class homePage implements Initializable {
                     InputStream inputStream = blob.getBinaryStream();
                     Image image = new Image(inputStream);
                     circle.setFill(new ImagePattern(image));
+                    popUpCircle.setFill(new ImagePattern(image));
                 }else {
                     Image image = new Image(Objects.requireNonNull(getClass().getResourceAsStream("file/profile.png")));
                     //ProfilePic.setImage(image);
                     circle.setFill(new ImagePattern(image));
+                    popUpCircle.setFill(new ImagePattern(image));
                 }
 
             }
@@ -258,6 +273,7 @@ public class homePage implements Initializable {
     }
     @FXML
     void onProfileCircleButtonClick(MouseEvent event) {
+        popUpPane.setVisible(true);
         System.out.println("clicked");
     }
 

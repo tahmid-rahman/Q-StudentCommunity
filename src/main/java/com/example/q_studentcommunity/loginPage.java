@@ -24,6 +24,7 @@ public class loginPage  {
     @FXML private Label comment;
     @FXML private TextField Email;
     @FXML private PasswordField password;
+
     public static String CurrentUserName;
     public static String UserType;
     public static String E_mail;

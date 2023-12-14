@@ -201,25 +201,48 @@
                               <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
                            </padding>
                            <children>
-                              <Button mnemonicParsing="false" onAction="#onCreateNewPostButtonClick" prefHeight="30.0" prefWidth="400.0" style="-fx-background-radius: 5;" styleClass="background" stylesheets="@../../../style/style.css" text="Create new post" textFill="#6095c0">
-                                 <effect>
-                                    <DropShadow>
-                                       <color>
-                                          <Color opacity="0.6000000238418579" />
-                                       </color>
-                                    </DropShadow>
-                                 </effect>
-                                 <cursor>
-                                    <Cursor fx:constant="OPEN_HAND" />
-                                 </cursor>
-                                 <graphic>
-                                    <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@file/icons8-create-post-26.png" />
-                                       </image>
-                                    </ImageView>
-                                 </graphic>
-                              </Button>
+                              <HBox alignment="CENTER_LEFT" spacing="5.0">
+                                 <children>
+                                    <Button mnemonicParsing="false" onAction="#onCreateNewPostButtonClick" prefHeight="28.0" prefWidth="196.0" style="-fx-background-radius: 5;" styleClass="background" stylesheets="@../../../style/style.css" text="Create new post" textFill="#6095c0">
+                                       <effect>
+                                          <DropShadow>
+                                             <color>
+                                                <Color opacity="0.6000000238418579" />
+                                             </color>
+                                          </DropShadow>
+                                       </effect>
+                                       <cursor>
+                                          <Cursor fx:constant="OPEN_HAND" />
+                                       </cursor>
+                                       <graphic>
+                                          <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@file/icons8-create-post-26.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                    <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#onEditButtonClick" prefHeight="28.0" prefWidth="190.0" style="-fx-background-radius: 5;" styleClass="background" stylesheets="@../../../style/style.css" text="Edit" textFill="#6095c0">
+                                       <effect>
+                                          <DropShadow>
+                                             <color>
+                                                <Color opacity="0.6000000238418579" />
+                                             </color>
+                                          </DropShadow>
+                                       </effect>
+                                       <cursor>
+                                          <Cursor fx:constant="OPEN_HAND" />
+                                       </cursor>
+                                       <graphic>
+                                          <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@file/icons8-create-post-26.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                 </children>
+                              </HBox>
                            </children>
                         </VBox>
                      </content>

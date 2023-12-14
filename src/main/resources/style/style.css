@@ -1,6 +1,12 @@
 .selected {
 
 }
+.button-mouse-hover: hover{
+    -fx-background-color : #c9528a;
+}
+.popUp-background {
+    -fx-background-color: #a34370;
+}
 .button-background{
     -fx-background-color: #ffffff;
 }
@@ -13,7 +19,7 @@
 .helpPost-button-background{
      -fx-background-color: #886a9a;
 }
-.w-move-mouse : hover {
+.w-move-mouse: hover {
      -fx-background-color: #a984c0;
 }
 
