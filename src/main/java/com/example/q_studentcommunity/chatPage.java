@@ -25,6 +25,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.ResourceBundle;
+import static com.example.q_studentcommunity.loginPage.CurrentUserName;
 
 
 public class chatPage implements Initializable {
@@ -204,7 +205,10 @@ public class chatPage implements Initializable {
             user.setUserName(l);
             pan.setOnMouseClicked(event1 -> {
                 String cUser = user.getUser();
-                username.setText(cUser);
+                if(cUser.equals(CurrentUserName)){
+                    username.setText(cUser+" (self)");
+                }else {username.setText(cUser);}
+
                 CurrentReceiver = cUser;
                 chatHolder.getChildren().clear();
             });

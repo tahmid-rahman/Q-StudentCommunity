@@ -28,6 +28,7 @@ import java.util.Objects;
 import java.util.ResourceBundle;
 
 import static com.example.q_studentcommunity.loginPage.CurrentUserName;
+import static com.example.q_studentcommunity.loginPage.PageName;
 
 public class profilePage implements Initializable {
 
@@ -43,6 +44,7 @@ public class profilePage implements Initializable {
     @FXML
     private Label username;
     public ArrayList<Post> post;
+    public static boolean flag = true;
 
     @FXML void onLogoutButtonClick(ActionEvent event) throws IOException {
 
@@ -110,6 +112,7 @@ public class profilePage implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        PageName = "profilePage";
         SetEmailAndProfilePic();
         username.setText(CurrentUserName);
 
@@ -202,6 +205,8 @@ public class profilePage implements Initializable {
                 }else {p.setCaption("");}
                 p.setUsername(queryResult.getString("username"));
                 p.setUserType(queryResult.getString("usertype"));
+                p.setHomePostId(queryResult.getString("id"));
+
                 list.add(p);
 
             }

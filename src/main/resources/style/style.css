@@ -4,6 +4,12 @@
 .button-mouse-hover: hover{
     -fx-background-color : #c9528a;
 }
+.help-popUp-hover: hover{
+    -fx-background-color : #a984c0;
+}
+.help-popUp-background{
+    -fx-background-color : #886a9a;
+}
 .popUp-background {
     -fx-background-color: #a34370;
 }
@@ -58,8 +64,25 @@
     -fx-border-color : #ffffff;
 }
 .file-background {
-    -fx-background-color : #a58d7f;
+    -fx-background-color : #c0870f;
+}
+.file-move:hover{
+    -fx-background-color : #ffd932;
 }
 .hover : hover {
     -fx-background-color: #c3a696;
+}
+.profile-hover:hover{
+    -fx-background-color: #73b2e6;
+}
+.profile-background{
+    -fx-background-color: #6095c0;
+}
+
+
+.update-background{
+    -fx-background-color: #73b2e6;
+}
+.update-hover:hover{
+    -fx-background-color: #7fbcff;
 }

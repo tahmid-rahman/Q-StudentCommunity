@@ -33,6 +33,7 @@ import java.util.Objects;
 import java.util.ResourceBundle;
 
 import static com.example.q_studentcommunity.loginPage.CurrentUserName;
+import static com.example.q_studentcommunity.loginPage.PageName;
 
 public class Help implements Initializable {
 
@@ -45,12 +46,21 @@ public class Help implements Initializable {
     private VBox PaneVbox;
     @FXML
     private Circle profileCricle;
+    @FXML
+    private Pane popPane;
+    @FXML
+    private VBox topicContainer;
 
     @FXML
     Button feed;
     @FXML
     private Pane panToBeUsed;
     public ArrayList<HelpPost> helpost;
+    public ArrayList<HelpPopupClass> popTopic;
+    @FXML
+    void onCrossButtonClick(MouseEvent event) {
+        popPane.setVisible(false);
+    }
     @FXML void onLogoutButtonClick(ActionEvent event) throws IOException {
 
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("loginPage.fxml")));
@@ -117,24 +127,12 @@ public class Help implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        //PageName = "Help";
         SetProfilepic();
-       // post = new ArrayList<>(getList());
-//        for (Post value : post) {
-//            FXMLLoader loader = new FXMLLoader();
-//            loader.setLocation(getClass().getResource("PostTemplate.fxml"));
-//
-//            try {
-//                PostHolder.getChildren().add(loader.load());
-//            } catch (IOException e) {
-//                throw new RuntimeException(e);
-//            }
-//
-//            PostTemplate postControl = loader.getController();
-//            postControl.setData(value);
-//
-//        }\
+        popPane.setVisible(false);
 
         helpost = new ArrayList<>(getHelpList());
+
 
         Platform.runLater(new Runnable() {
             @Override
@@ -151,6 +149,25 @@ public class Help implements Initializable {
 
                     HelpPostTemplate postCollector = loader.getController();
                     postCollector.setHelpData(value);
+                }
+            }
+        });
+        popTopic = new ArrayList<>(getPopTopic());
+        Platform.runLater(new Runnable() {
+            @Override
+            public void run() {
+                for (HelpPopupClass value : popTopic) {
+                    FXMLLoader loader = new FXMLLoader();
+                    loader.setLocation(getClass().getResource("helpPopUp.fxml"));
+
+                    try {
+                        topicContainer.getChildren().add(loader.load());
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
+
+                    helpPopUp Pop = loader.getController();
+                    Pop.setHelpPopData(value);
                 }
             }
         });
@@ -197,6 +214,37 @@ public class Help implements Initializable {
 
         }
 
+
+        return list;
+    }
+
+    private List<HelpPopupClass> getPopTopic(){
+        List<HelpPopupClass> list = new ArrayList<>();
+
+        DatabaseConnection connectNow = new DatabaseConnection();
+        Connection connectDB = connectNow.getConnection();
+        String getData = "SELECT * FROM help_post WHERE 1";
+        try {
+            Statement statement = connectDB.createStatement();
+            ResultSet queryResult = statement.executeQuery(getData);
+
+            while (queryResult.next()){
+                //System.out.println(queryResult.getString("topic"));
+                if(queryResult.getString("postername").equals(CurrentUserName)){
+                    HelpPopupClass hpc = new HelpPopupClass();
+
+                    hpc.setTopText("Topic name: "+queryResult.getString("topic"));
+                    hpc.setTopIp(queryResult.getString("postId"));
+                    list.add(hpc);
+                }
+
+            }
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+            e.printStackTrace();
+            e.getCause();
+
+        }
 
         return list;
     }
@@ -253,7 +301,7 @@ public class Help implements Initializable {
 
     @FXML
     void onProfileCircleButtonClick(MouseEvent event) {
-        //scrollPane.getChildrenUnmodifiable().add()
+        popPane.setVisible(true);
     }
 
 

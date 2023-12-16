@@ -1,6 +1,8 @@
 package com.example.q_studentcommunity;
 
 import javafx.application.Platform;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -15,6 +17,7 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.ImagePattern;
@@ -26,6 +29,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.Socket;
 import java.net.URL;
+import java.security.spec.RSAOtherPrimeInfo;
 import java.sql.Blob;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -34,22 +38,29 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.ResourceBundle;
+import static com.example.q_studentcommunity.loginPage.PageName;
 
 import static com.example.q_studentcommunity.loginPage.CurrentUserName;
 
 public class homePage implements Initializable {
 
 
-    @FXML Label user;
+    @FXML private Label user;
     @FXML private VBox PostHolder;
-    @FXML Circle circle;
-    @FXML Button feed;
+    @FXML private Circle circle;
+    @FXML private Button feed;
     @FXML private Pane popUpPane;
     @FXML private Circle popUpCircle;
     @FXML private Button popUpUsername;
+    @FXML private Pane FeedPane;
+    @FXML public  VBox feedVox;
+    @FXML private HBox feedhbox;
+    public static String usernameForProfileView;
+
 
 
     public ArrayList<Post> post;
+
     @FXML
     void onPopUpCrossButton(MouseEvent event) {
         popUpPane.setVisible(false);
@@ -126,10 +137,10 @@ public class homePage implements Initializable {
     }
 
 
-
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        //feedVox.setVisible(false);
+        PageName = "homePage";
 
         SetUsernameAndProfilepic();
         popUpPane.setVisible(false);
@@ -137,20 +148,6 @@ public class homePage implements Initializable {
         popUpUsername.setText(CurrentUserName);
 
         post = new ArrayList<>(getList());
-//        for (Post value : post) {
-//            FXMLLoader loader = new FXMLLoader();
-//            loader.setLocation(getClass().getResource("PostTemplate.fxml"));
-//
-//            try {
-//                PostHolder.getChildren().add(loader.load());
-//            } catch (IOException e) {
-//                throw new RuntimeException(e);
-//            }
-//
-//            PostTemplate postControl = loader.getController();
-//            postControl.setData(value);
-//
-//        }\
         Platform.runLater(new Runnable() {
 
             @Override
@@ -172,6 +169,7 @@ public class homePage implements Initializable {
         });
 
        // System.out.println(UserName);
+
 
     }
 
@@ -212,6 +210,8 @@ public class homePage implements Initializable {
               //  p.setProfilePic("file/feed.png");
                 p.setUsername(queryResult.getString("username"));
                 p.setUserType(queryResult.getString("usertype"));
+                p.setHomePostId(queryResult.getString("id"));
+                //System.out.println(queryResult.getString("id"));
                 list.add(p);
 
             }
@@ -276,5 +276,10 @@ public class homePage implements Initializable {
         popUpPane.setVisible(true);
         System.out.println("clicked");
     }
+
+    private void filterData(String filter) {
+
+    }
+
 
 }

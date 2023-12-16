@@ -10,6 +10,15 @@ public class Post {
     private Image profilePic;
     private Image postPic;
     private String qPoint;
+    private String homePostId;
+
+    public String getHomePostId() {
+        return homePostId;
+    }
+
+    public void setHomePostId(String homePostId) {
+        this.homePostId = homePostId;
+    }
 
     public String getUsername() {
         return username;

@@ -20,6 +20,7 @@ import java.util.Objects;
 import java.util.Properties;
 import java.util.ResourceBundle;
 
+
 public class loginPage  {
     @FXML private Label comment;
     @FXML private TextField Email;
@@ -29,6 +30,8 @@ public class loginPage  {
     public static String UserType;
     public static String E_mail;
     public static String Password;
+    public static String PageName = "loginPage";
+
 
     @FXML protected void onExitButtonClick(){
         javafx.application.Platform.exit();
