@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="resourcePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.q_studentcommunity.ResourceControl">
+   <children>
+      <VBox prefHeight="600.0" prefWidth="450.0">
+         <children>
+            <Pane prefHeight="90.0" prefWidth="450.0" style="-fx-background-color: #d7f1f3;">
+               <children>
+                  <Label layoutX="22.0" layoutY="14.0" text="Resource " textFill="#32746d">
+                     <font>
+                        <Font name="System Bold" size="25.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="22.0" layoutY="50.0" text="Here all the issus and submitted file" textFill="#00ab09" />
+               </children>
+            </Pane>
+            <Pane prefHeight="42.0" prefWidth="450.0" style="-fx-background-color: #e2fdff;">
+               <children>
+                  <HBox alignment="CENTER_RIGHT" layoutX="25.0" layoutY="6.0" prefHeight="26.0" prefWidth="401.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#newFolderClcik" stylesheets="@../../../style/style.css" text="Add new folder">
+                           <styleClass>
+                              <String fx:value="resource-button-background" />
+                              <String fx:value="resource-button-hover" />
+                           </styleClass>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#newFileClick" stylesheets="@../../../style/style.css" text="Add new file">
+                           <styleClass>
+                              <String fx:value="resource-button-background" />
+                              <String fx:value="resource-button-hover" />
+                           </styleClass>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </Pane>
+            <Pane prefHeight="479.0" prefWidth="450.0" style="-fx-background-color: #e2fdff;">
+               <children>
+                  <ScrollPane hbarPolicy="NEVER" layoutX="29.0" layoutY="14.0" prefHeight="440.0" prefWidth="395.0" stylesheets="@../../../style/style.css" vbarPolicy="NEVER">
+                     <content>
+                        <VBox fx:id="folderHolder" prefHeight="438.0" prefWidth="393.0" style="-fx-border-color: #a69f58;" />
+                     </content>
+                  </ScrollPane>
+               </children>
+            </Pane>
+         </children>
+      </VBox>
+   </children>
+</Pane>

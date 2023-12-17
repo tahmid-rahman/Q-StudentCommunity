@@ -303,7 +303,10 @@
                                                 <Font name="System Bold" size="18.0" />
                                              </font>
                                           </Label>
-                                          <Label fx:id="Email" text="online" textFill="#e3ffe7a6" />
+                                          <Label fx:id="Email" text="online" textFill="#00ff22a6">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font></Label>
                                        </children>
                                     </VBox>
                                  </children>

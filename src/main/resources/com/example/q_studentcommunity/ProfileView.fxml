@@ -6,49 +6,60 @@
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<Pane fx:id="profilePane" prefHeight="600.0" prefWidth="450.0" style="-fx-background-color: #812630;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.q_studentcommunity.ProfileView">
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.q_studentcommunity.ProfileView">
    <children>
-      <HBox alignment="CENTER" layoutX="14.0" layoutY="14.0" prefHeight="100.0" prefWidth="422.0" spacing="15.0">
+      <HBox prefHeight="600.0" prefWidth="700.0">
          <children>
-            <Circle fx:id="circle" fill="#ff1f3430" radius="46.0" stroke="#269dff00" strokeType="INSIDE" />
-            <VBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="256.0">
+            <Pane prefHeight="600.0" prefWidth="250.0" />
+            <Pane fx:id="profilePane" prefHeight="600.0" prefWidth="450.0" style="-fx-background-color: #812630;">
                <children>
-                  <Label fx:id="username" text="Username" textFill="WHITE">
-                     <font>
-                        <Font name="System Bold" size="22.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="Email" text="Email" textFill="#f2e0e0e3" />
-               </children>
-            </VBox>
-            <Pane>
-               <children>
-                  <ImageView fitHeight="33.0" fitWidth="26.0" layoutY="16.0" onMouseClicked="#onCrossButtonClick" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@file/icons8-cancel-60.png" />
-                     </image>
-                     <cursor>
-                        <Cursor fx:constant="OPEN_HAND" />
-                     </cursor>
-                  </ImageView>
+                  <HBox alignment="CENTER" layoutX="14.0" layoutY="14.0" prefHeight="100.0" prefWidth="422.0" spacing="15.0">
+                     <children>
+                        <Circle fx:id="circle" fill="#ff1f3430" radius="46.0" stroke="#269dff00" strokeType="INSIDE" />
+                        <VBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="256.0">
+                           <children>
+                              <Label fx:id="username" text="Username" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="22.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="Email" text="Email" textFill="#f2e0e0e3" />
+                           </children>
+                        </VBox>
+                        <Pane>
+                           <children>
+                              <ImageView fitHeight="33.0" fitWidth="26.0" layoutY="16.0" onMouseClicked="#onCrossButtonClick" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@file/icons8-cancel-60.png" />
+                                 </image>
+                                 <cursor>
+                                    <Cursor fx:constant="OPEN_HAND" />
+                                 </cursor>
+                              </ImageView>
+                           </children>
+                        </Pane>
+                     </children>
+                  </HBox>
+                  <ScrollPane hbarPolicy="NEVER" layoutY="121.0" prefHeight="480.0" prefWidth="450.0" styleClass="background" stylesheets="@../../../style/style.css" vbarPolicy="NEVER">
+                     <content>
+                        <VBox fx:id="postContainer" prefHeight="477.0" prefWidth="449.0" spacing="10.0">
+                           <padding>
+                              <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                           </padding>
+                        </VBox>
+                     </content>
+                  </ScrollPane>
                </children>
             </Pane>
          </children>
       </HBox>
-      <ScrollPane hbarPolicy="NEVER" layoutY="121.0" prefHeight="480.0" prefWidth="450.0" styleClass="background" stylesheets="@../../../style/style.css" vbarPolicy="NEVER">
-         <content>
-            <VBox fx:id="postContainer" prefHeight="477.0" prefWidth="449.0" spacing="10.0">
-               <padding>
-                  <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
-               </padding>
-            </VBox>
-         </content>
-      </ScrollPane>
    </children>
-</Pane>
+</AnchorPane>

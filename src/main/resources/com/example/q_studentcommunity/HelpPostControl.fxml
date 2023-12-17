@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="resourcePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.q_studentcommunity.FeedPostControl">
+   <children>
+      <VBox prefHeight="600.0" prefWidth="450.0">
+         <children>
+            <Pane prefHeight="90.0" prefWidth="450.0" style="-fx-background-color: #cee8d2;">
+               <children>
+                  <Label layoutX="22.0" layoutY="14.0" text="Help post" textFill="#32746d">
+                     <font>
+                        <Font name="System Bold" size="25.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="22.0" layoutY="50.0" text="You can delete or see everyones post" textFill="#00ab09" />
+               </children>
+            </Pane>
+            <Pane prefHeight="511.0" prefWidth="450.0" style="-fx-background-color: #d8f3dc;">
+               <children>
+                  <TableView layoutX="14.0" layoutY="13.0" prefHeight="484.0" prefWidth="421.0">
+                     <columns>
+                        <TableColumn prefWidth="84.0" text="Post ID" />
+                        <TableColumn prefWidth="112.0" text="Username" />
+                        <TableColumn prefWidth="118.0" text="Caption" />
+                        <TableColumn prefWidth="106.0" text="Date" />
+                     </columns>
+                  </TableView>
+               </children>
+            </Pane>
+         </children>
+      </VBox>
+   </children>
+</Pane>

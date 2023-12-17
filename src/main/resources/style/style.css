@@ -86,3 +86,23 @@
 .update-hover:hover{
     -fx-background-color: #7fbcff;
 }
+.admin-button-background{
+    -fx-background-color: #dc6e25;
+}
+.admin-button-hover:hover{
+    -fx-background-color: #f87c29;
+}
+.server-button-background{
+    -fx-background-color: #ecf3ce;
+}
+.server-button-hover:hover{
+    -fx-background-color: #f8ffd8;
+}
+.resource-button-background{
+    -fx-background-color: #e2fdff;
+}
+.resource-button-hover:hover{
+    -fx-background-color: #dee2c0;
+}
+
+

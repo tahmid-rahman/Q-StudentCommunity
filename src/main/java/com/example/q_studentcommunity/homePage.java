@@ -30,10 +30,7 @@ import java.io.InputStream;
 import java.net.Socket;
 import java.net.URL;
 import java.security.spec.RSAOtherPrimeInfo;
-import java.sql.Blob;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -67,7 +64,12 @@ public class homePage implements Initializable {
     }
 
     @FXML
-    void onLogoutButtonClick(ActionEvent event) throws IOException {
+    void onLogoutButtonClick(ActionEvent event) throws IOException, SQLException {
+        DatabaseConnection connectNow = new DatabaseConnection();
+        Connection connectDB = connectNow.getConnection();
+        String data = "DELETE FROM chat_user_list WHERE username = '"+CurrentUserName+"'";
+        Statement statement = connectDB.createStatement();
+        statement.execute(data);
 
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("loginPage.fxml")));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
