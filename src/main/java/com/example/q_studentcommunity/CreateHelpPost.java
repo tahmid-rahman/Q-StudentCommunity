@@ -34,7 +34,7 @@ public class CreateHelpPost {
     private String imagePath;
     File selectedHelpFile = null;
     private PreparedStatement store;
-    private String storeStatement = "INSERT INTO help_post (topic,helpText,helpPic) VALUE (?,?,?)";
+    private String storeStatement = "INSERT INTO help_post (topic,helpText,helpPic,postername) VALUE (?,?,?,?)";
 
     @FXML
     void onBrowseButtonClick(ActionEvent event) {
@@ -84,6 +84,7 @@ public class CreateHelpPost {
             DatabaseConnection connectNow = new DatabaseConnection();
             Connection connectDB = connectNow.getConnection();
             store = connectDB.prepareStatement(storeStatement);
+            store.setString(4,CurrentUserName);
             if(selectedHelpFile != null){
                 FileInputStream fileInputStream = new FileInputStream(selectedHelpFile);
                 store.setBinaryStream(3,fileInputStream,fileInputStream.available());

@@ -129,7 +129,7 @@ class InputOutput extends Thread{
 
 
 
-                    System.out.println(ms);
+                    //System.out.println("hello " + ms);
                 }
 
             } catch (IOException e) {
@@ -150,6 +150,7 @@ class InputOutput extends Thread{
         }
     }
     void sendToCommunity(String ms,String user){
+
         System.out.println(Server.userLIst.size());
         for (String use:Server.userLIst) {
             try {

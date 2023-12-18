@@ -7,6 +7,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.chart.LineChart;
+import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
@@ -15,6 +17,11 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.time.LocalDate;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
@@ -58,7 +65,13 @@ public class AdminPanel implements Initializable {
 
     @FXML
     private Label totolUser;
+    @FXML
+    private LineChart<?, ?> lineChat;
 
+
+
+
+    private LocalDate localDate = LocalDate.now();
     @FXML
     void dashboard(ActionEvent event) throws IOException {
         /*
@@ -167,7 +180,100 @@ public class AdminPanel implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         dashPane.setVisible(true);
 //        dashboard.setStyle(" -fx-background-color :#f87c29");
+        try {
+            setTotalUserInDashboard();
+            setTotalActiveUserInDashboard();
+            setTotalHelpPostInDashboard();
+            setTotalNormalPostInDashboard();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        XYChart.Series chartData = new XYChart.Series();
+        try {
+            for (int i = 30; i >= 0; i--) {
+                String y = String.valueOf(localDate.minusDays(i));
+                int x = setX(localDate.minusDays(i));
+               // System.out.println(y + "    " + x);
+                chartData.getData().add(new XYChart.Data(y, x));
+            }
+            lineChat.getData().add(chartData);
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+        //lineChat.getData().add();
 
 
+
+    }
+    public void setTotalUserInDashboard() throws SQLException {
+        DatabaseConnection connectNow = new DatabaseConnection();
+        Connection connectDB = connectNow.getConnection();
+        String getData = "SELECT * FROM logindata WHERE 1";
+        Statement statement = connectDB.createStatement();
+        ResultSet queryResult = statement.executeQuery(getData);
+        int user=0;
+        while(queryResult.next()){
+            user+=1;
+        }
+        totolUser.setText(user+" person");
+    }
+    public void setTotalActiveUserInDashboard() throws SQLException {
+        DatabaseConnection connectNow = new DatabaseConnection();
+        Connection connectDB = connectNow.getConnection();
+        String getData = "SELECT * FROM chat_user_list WHERE 1";
+        Statement statement = connectDB.createStatement();
+        ResultSet queryResult = statement.executeQuery(getData);
+        int user=0;
+        while(queryResult.next()){
+            user+=1;
+        }
+        activeUser.setText(user+" person");
+    }
+    public void setTotalHelpPostInDashboard() throws SQLException {
+        DatabaseConnection connectNow = new DatabaseConnection();
+        Connection connectDB = connectNow.getConnection();
+        String getData = "SELECT * FROM help_post WHERE 1";
+        Statement statement = connectDB.createStatement();
+        ResultSet queryResult = statement.executeQuery(getData);
+        int user=0;
+        while(queryResult.next()){
+            user+=1;
+        }
+        totalHelpPost.setText(user+" person");
+    }
+    public void setTotalNormalPostInDashboard() throws SQLException {
+        DatabaseConnection connectNow = new DatabaseConnection();
+        Connection connectDB = connectNow.getConnection();
+        String getData = "SELECT * FROM home_page_post WHERE 1";
+        Statement statement = connectDB.createStatement();
+        ResultSet queryResult = statement.executeQuery(getData);
+        int user=0;
+        while(queryResult.next()){
+            user+=1;
+        }
+        totolHomePost.setText(user+" person");
+    }
+    private int setX(LocalDate date){
+        int x = 0;
+        DatabaseConnection connectNow = new DatabaseConnection();
+        Connection connectDB = connectNow.getConnection();
+        String getData = "SELECT * FROM help_post WHERE 1";
+        try {
+            Statement statement = connectDB.createStatement();
+            ResultSet queryResult = statement.executeQuery(getData);
+            while (queryResult.next()){
+                //System.out.println(queryResult.getDate("date"));
+                //System.out.println(date);
+                String d1 = String.valueOf(queryResult.getDate("date"));
+                String d2 = String.valueOf(date);
+                if(d1.equals(d2)){
+                    x+=1;
+                }
+            }
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return x;
     }
 }

@@ -163,10 +163,10 @@
                      <children>
                         <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@file/4.png" />
+                              <Image url="@file/5.png" />
                            </image>
                         </ImageView>
-                        <Label text="QUEUE" textFill="#fea55e">
+                        <Label text="QUEUE" textFill="#c0870f">
                            <font>
                               <Font name="Rockwell Bold" size="22.0" />
                            </font>

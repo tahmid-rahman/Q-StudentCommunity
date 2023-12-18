@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<Pane fx:id="resourcePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.q_studentcommunity.FeedPostControl">
+<Pane fx:id="resourcePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.q_studentcommunity.HelpPostControl">
    <children>
       <VBox prefHeight="600.0" prefWidth="450.0">
          <children>
@@ -23,12 +23,12 @@
             </Pane>
             <Pane prefHeight="511.0" prefWidth="450.0" style="-fx-background-color: #d8f3dc;">
                <children>
-                  <TableView layoutX="14.0" layoutY="13.0" prefHeight="484.0" prefWidth="421.0">
+                  <TableView fx:id="HelpPostTable" layoutX="14.0" layoutY="13.0" prefHeight="484.0" prefWidth="421.0">
                      <columns>
-                        <TableColumn prefWidth="84.0" text="Post ID" />
-                        <TableColumn prefWidth="112.0" text="Username" />
-                        <TableColumn prefWidth="118.0" text="Caption" />
-                        <TableColumn prefWidth="106.0" text="Date" />
+                        <TableColumn fx:id="postId" prefWidth="84.0" text="Post ID" />
+                        <TableColumn fx:id="userName" prefWidth="112.0" text="Username" />
+                        <TableColumn fx:id="caption" prefWidth="118.0" text="Caption" />
+                        <TableColumn fx:id="control" prefWidth="106.0" text="Control" />
                      </columns>
                   </TableView>
                </children>

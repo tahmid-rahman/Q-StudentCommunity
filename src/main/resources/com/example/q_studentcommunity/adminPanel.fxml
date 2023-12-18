@@ -200,7 +200,10 @@
                                              </font>
                                           </Label>
                                           <Line endX="75.0" layoutX="100.0" layoutY="42.0" startX="-80.0" stroke="WHITE" />
-                                          <Label fx:id="totolUser" alignment="CENTER" layoutX="11.0" layoutY="54.0" prefHeight="17.0" prefWidth="176.0" text="Label" textFill="#a6654a" />
+                                          <Label fx:id="totolUser" alignment="CENTER" layoutX="11.0" layoutY="54.0" prefHeight="17.0" prefWidth="176.0" text="Label" textFill="#a6654a">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font></Label>
                                        </children>
                                        <effect>
                                           <DropShadow>
@@ -212,13 +215,16 @@
                                     </Pane>
                                     <Pane layoutX="20.0" layoutY="20.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #c297b8; -fx-background-radius: 5 20 5 5;">
                                        <children>
-                                          <Label layoutX="57.0" layoutY="14.0" text="Active Users" textFill="WHITE">
+                                          <Label layoutX="57.0" layoutY="14.0" text="Active now" textFill="WHITE">
                                              <font>
                                                 <Font name="System Bold" size="14.0" />
                                              </font>
                                           </Label>
                                           <Line endX="75.0" layoutX="100.0" layoutY="42.0" startX="-80.0" stroke="WHITE" />
-                                          <Label fx:id="activeUser" alignment="CENTER" layoutX="10.0" layoutY="54.0" prefHeight="17.0" prefWidth="176.0" text="Label" textFill="#6c5466" />
+                                          <Label fx:id="activeUser" alignment="CENTER" layoutX="10.0" layoutY="54.0" prefHeight="17.0" prefWidth="176.0" text="Label" textFill="#6c5466">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font></Label>
                                        </children>
                                        <effect>
                                           <DropShadow>
@@ -243,7 +249,10 @@
                                              </font>
                                           </Label>
                                           <Line endX="75.0" layoutX="101.0" layoutY="42.0" startX="-80.0" stroke="WHITE" />
-                                          <Label fx:id="totalHelpPost" alignment="CENTER" layoutX="12.0" layoutY="54.0" prefHeight="17.0" prefWidth="176.0" text="Label" textFill="#496a49" />
+                                          <Label fx:id="totalHelpPost" alignment="CENTER" layoutX="12.0" layoutY="54.0" prefHeight="17.0" prefWidth="176.0" text="Label" textFill="#496a49">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font></Label>
                                        </children>
                                        <effect>
                                           <DropShadow>
@@ -261,7 +270,10 @@
                                              </font>
                                           </Label>
                                           <Line endX="75.0" layoutX="100.0" layoutY="42.0" startX="-80.0" stroke="WHITE" />
-                                          <Label fx:id="totolHomePost" alignment="CENTER" layoutX="11.0" layoutY="54.0" prefHeight="17.0" prefWidth="176.0" text="Label" textFill="#6e4e50" />
+                                          <Label fx:id="totolHomePost" alignment="CENTER" layoutX="11.0" layoutY="54.0" prefHeight="17.0" prefWidth="176.0" text="Label" textFill="#6e4e50">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font></Label>
                                        </children>
                                        <effect>
                                           <DropShadow>
@@ -276,7 +288,7 @@
                                     <Insets bottom="10.0" left="10.0" right="10.0" top="5.0" />
                                  </padding>
                               </HBox>
-                              <LineChart legendSide="TOP" prefHeight="270.0" prefWidth="345.0" title="Help Post">
+                              <LineChart fx:id="lineChat" legendSide="TOP" prefHeight="270.0" prefWidth="345.0" title="Help Post">
                                 <xAxis>
                                   <CategoryAxis side="BOTTOM" />
                                 </xAxis>

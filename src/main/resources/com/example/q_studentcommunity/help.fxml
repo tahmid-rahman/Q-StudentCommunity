@@ -162,9 +162,9 @@
                   </VBox>
                   <HBox accessibleRole="HYPERLINK" alignment="CENTER" layoutX="55.0" layoutY="55.0" onDragDetected="#onOpinionPageButtonClick" prefHeight="50.0" prefWidth="135.0" spacing="5.0">
                      <children>
-                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="50.0" fitWidth="93.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@file/Pink%20and%20Purple%20Minimal%20Q%20Letter%20Logo%20(2).png" />
+                              <Image url="@file/2.png" />
                            </image>
                         </ImageView>
                         <Label text="QUEUE" textFill="#886a9a">

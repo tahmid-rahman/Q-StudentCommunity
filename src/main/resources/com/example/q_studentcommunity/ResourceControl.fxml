@@ -5,12 +5,16 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.TextFlow?>
 
-<Pane fx:id="resourcePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.q_studentcommunity.ResourceControl">
+<Pane fx:id="resourcePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onDragDetected="#addFolderClick" prefHeight="600.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.q_studentcommunity.ResourceControl">
    <children>
       <VBox prefHeight="600.0" prefWidth="450.0">
          <children>
@@ -22,6 +26,14 @@
                      </font>
                   </Label>
                   <Label layoutX="22.0" layoutY="50.0" text="Here all the issus and submitted file" textFill="#00ab09" />
+                  <ImageView fitHeight="30.0" fitWidth="28.0" layoutX="400.0" layoutY="30.0" onMouseClicked="#onCrossButtonClick" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@file/icons8-cancel-32%2020.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="OPEN_HAND" />
+                     </cursor>
+                  </ImageView>
                </children>
             </Pane>
             <Pane prefHeight="42.0" prefWidth="450.0" style="-fx-background-color: #e2fdff;">
@@ -50,7 +62,7 @@
                   </HBox>
                </children>
             </Pane>
-            <Pane prefHeight="479.0" prefWidth="450.0" style="-fx-background-color: #e2fdff;">
+            <Pane fx:id="fileViewPane" prefHeight="479.0" prefWidth="450.0" style="-fx-background-color: #e2fdff;">
                <children>
                   <ScrollPane hbarPolicy="NEVER" layoutX="29.0" layoutY="14.0" prefHeight="440.0" prefWidth="395.0" stylesheets="@../../../style/style.css" vbarPolicy="NEVER">
                      <content>
@@ -61,5 +73,80 @@
             </Pane>
          </children>
       </VBox>
+      <Pane fx:id="addfolderPane" layoutY="122.0" prefHeight="479.0" prefWidth="450.0" style="-fx-background-color: #e2fdff;">
+         <children>
+            <TextFlow layoutX="86.0" layoutY="153.0" prefHeight="38.0" prefWidth="294.0">
+               <children>
+                  <TextField fx:id="foldername" prefHeight="44.0" prefWidth="293.0" promptText="Enter folder name">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </TextFlow>
+            <Label layoutX="86.0" layoutY="119.0" prefHeight="25.0" text="Folder name">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Button layoutX="150.0" layoutY="208.0" mnemonicParsing="false" onAction="#newFolderClcik" prefHeight="44.0" prefWidth="151.0" stylesheets="@../../../style/style.css" text="Add new folder" textFill="#0d7200">
+               <styleClass>
+                  <String fx:value="resource-button-background" />
+                  <String fx:value="resource-button-hover" />
+               </styleClass>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <Pane fx:id="addfilePane" layoutY="121.0" prefHeight="479.0" prefWidth="450.0" style="-fx-background-color: #e2fdff;">
+         <children>
+            <TextFlow layoutX="79.0" layoutY="60.0" prefWidth="294.0">
+               <children>
+                  <TextField fx:id="folName" prefHeight="31.0" prefWidth="295.0" promptText="Enter Folder name" />
+               </children>
+            </TextFlow>
+            <Pane layoutX="80.0" layoutY="110.0" prefHeight="236.0" prefWidth="306.0">
+               <children>
+                  <Pane layoutX="-4.0" prefHeight="239.0" prefWidth="315.0">
+                     <children>
+                        <ImageView fx:id="picture" fitHeight="246.0" fitWidth="315.0" onMouseClicked="#onBrouseButtonClicked" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@file/Screenshot%202023-12-16%20023954.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                        <ImageView fitHeight="30.0" fitWidth="28.0" layoutX="273.0" layoutY="14.0" onMouseClicked="#onCrossButtonClick" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@file/icons8-cancel-32%2020.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="OPEN_HAND" />
+                           </cursor>
+                        </ImageView>
+                     </children>
+                  </Pane>
+               </children>
+            </Pane>
+            <Button layoutX="151.0" layoutY="352.0" mnemonicParsing="false" onAction="#addFileCilck" prefHeight="44.0" prefWidth="151.0" stylesheets="@../../../style/style.css" text="Add new file" textFill="#0d7200">
+               <styleClass>
+                  <String fx:value="resource-button-background" />
+                  <String fx:value="resource-button-hover" />
+               </styleClass>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
    </children>
 </Pane>
