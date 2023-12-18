@@ -62,7 +62,9 @@ public class homePage implements Initializable {
     void onPopUpCrossButton(MouseEvent event) {
         popUpPane.setVisible(false);
     }
-
+    @FXML void onExitButtonClick(){
+        javafx.application.Platform.exit();
+    }
     @FXML
     void onLogoutButtonClick(ActionEvent event) throws IOException, SQLException {
         DatabaseConnection connectNow = new DatabaseConnection();

@@ -176,7 +176,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </HBox>
-                  <Button alignment="CENTER" layoutX="86.0" layoutY="526.0" mnemonicParsing="false" onAction="#onLogoutButtonClick" style="-fx-background-color: red;" text="LOG OUT" textFill="WHITE">
+                  <Button alignment="CENTER" layoutX="86.0" layoutY="526.0" mnemonicParsing="false" onAction="#onExitButtonClick" style="-fx-background-color: red;" text="Exit" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>

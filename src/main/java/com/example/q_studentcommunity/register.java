@@ -73,12 +73,12 @@ public class register extends Thread{
 
             if (!pass.equals(rePass)) {
                 comment.setText("*password don't match.");
-////            } else if (pass.length() < 8) {
-////                comment.setText("*password must be at least 8 character.");
-////            } else if (!email.matches("^[a-z]+[0-9]{6,7}+@[a-z]+\\.uiu\\.ac\\.bd$")) {
-////                comment.setText("must use your university mail.");
-////            } else if (!sId.matches("^[0-9]{9,10}$")) {
-////                comment.setText("must use your university student id.");
+            } else if (pass.length() < 8) {
+                comment.setText("*password must be at least 8 character.");
+            } else if (!email.matches("^[a-z]+[0-9]{6,7}+@[a-z]+\\.uiu\\.ac\\.bd$")) {
+                comment.setText("must use your university mail.");
+            } else if (!sId.matches("^[0-9]{9,10}$")) {
+                comment.setText("must use your university student id.");
             }else if (b) {
                 comment.setText("* Username is already taken.");
 

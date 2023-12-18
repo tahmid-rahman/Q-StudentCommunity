@@ -88,28 +88,28 @@ public class loginPage  {
       //  comment.setText(user + pass);
         DatabaseConnection connectNow = new DatabaseConnection();
         Connection connectDB = connectNow.getConnection();
-        String verifyLogin = "SELECT count(1) FROM logindata WHERE email ='" + email +"' AND password = '" + pass +"'";
+        String verifyLogin = "SELECT * FROM logindata WHERE 1 ";
         try {
             Statement statement = connectDB.createStatement();
             ResultSet queryResult = statement.executeQuery(verifyLogin);
-
+            boolean b = true;
             while (queryResult.next()){
-                if (queryResult.getInt(1)==1){
+                if (queryResult.getString("email").equals(queryResult.getString("password"))){
                   //  comment.setText("login Successful");
-
+                    b =false;
                     setUsername(email,pass);
                     loginButton(event);
                     break;
 
 
+                }
 
-                }
-                else {
-                   // comment.setText("login failed");
-                    Alert alert = new Alert(Alert.AlertType.ERROR);
-                    alert.setContentText("Email or password is not correct.\nPlease try again.");
-                    alert.show();
-                }
+            }
+            if(b){
+                // comment.setText("login failed");
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setContentText("Email or password is not correct.\nPlease try again.");
+                alert.show();
             }
         }catch (Exception e){
             System.out.println(e.getMessage());

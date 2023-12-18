@@ -24,7 +24,7 @@ public class ServerControl {
 
     @FXML
     void startClick(ActionEvent event) {
-        //Server.main();
+       // Server.main(args);
     }
 
 }

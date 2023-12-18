@@ -150,7 +150,6 @@ class InputOutput extends Thread{
         }
     }
     void sendToCommunity(String ms,String user){
-
         System.out.println(Server.userLIst.size());
         for (String use:Server.userLIst) {
             try {
